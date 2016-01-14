@@ -5,9 +5,9 @@
 ### Create a new branch for a concret task, this is recommanded when a member charges a task
 
 1. Check out a repository
-```
-git clone /path/to/repository
-```
+    ```
+    git clone /path/to/repository
+    ```
 2. Locate in the local root directory of the repository
 ```
 cd <path_to_local_root_directory>
