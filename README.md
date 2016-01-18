@@ -1,12 +1,12 @@
 # General-Resources-Box
 
 - Application Gallery
-	- Brand Graph	
-	- Doc Graph	
-	- HD Wall Explorer
-	- Divvy
-	- Compliance360
-- Development 
+	- [Brand Graph](https://github.com/awesome5team/General-Resources-Box/issues/2)
+	- [Doc Graph](https://github.com/awesome5team/General-Resources-Box/issues/3)
+	- [HD Wall Explorer](https://github.com/awesome5team/General-Resources-Box/issues/4)
+	- [Divvy](https://github.com/awesome5team/General-Resources-Box/issues/5)
+	- [Compliance360](https://github.com/awesome5team/General-Resources-Box/issues/6)
+- Development
 	- [Guidance: How Git Been Used In Projects](https://github.com/awesome5team/General-Resources-Box/issues/1)
 	- Guidance: Common Operation for Database
 
