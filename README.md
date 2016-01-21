@@ -10,6 +10,7 @@
 	- [Git: how git been used In projects](https://github.com/awesome5team/General-Resources-Box/issues/1)
 - Database
 	- [MySQL: how to execute a SQL file via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
+	- [MongoDB: how to import json file via Python](https://github.com/awesome5team/General-Resources-Box/issues/8)
 	- [MongoDB: install MongoDB community edition on OS X](https://github.com/awesome5team/General-Resources-Box/issues/9)
-	- [MongoDB: how to import json file via Python](https://github.com/awesome5team/General-Resources-Box/issues/9)
+	- [Neo4j: Using Neo4j from Python](https://github.com/awesome5team/General-Resources-Box/issues/10)
 
