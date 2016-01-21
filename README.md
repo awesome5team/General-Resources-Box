@@ -7,7 +7,9 @@
 	- [Divvy](https://github.com/awesome5team/General-Resources-Box/issues/5)
 	- [Compliance360](https://github.com/awesome5team/General-Resources-Box/issues/6)
 - Development
-	- [Git: How Git Been Used In Projects](https://github.com/awesome5team/General-Resources-Box/issues/1)
+	- [Git: how git been used In projects](https://github.com/awesome5team/General-Resources-Box/issues/1)
 - Database
-	- [MySQL: How to execute a SQL file via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
+	- [MySQL: how to execute a SQL file via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
+	- [MongoDB: install MongoDB community edition on OS X](https://github.com/awesome5team/General-Resources-Box/issues/9)
+	- [MongoDB: how to import json file via Python](https://github.com/awesome5team/General-Resources-Box/issues/9)
 
