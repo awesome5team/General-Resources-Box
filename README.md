@@ -1,7 +1,7 @@
 # General-Resources-Box
 
 - Application Gallery
-	- [Brand Graph](https://github.com/awesome5team/General-Resources-Box/issues/2) - Application for explore relationship between brands, help perceive commercial value and make wise decision.
+	- [Brand Graph](https://github.com/awesome5team/General-Resources-Box/issues/2) - Application for explore brands relationship, perceive commercial value and make wise decision.
 	- [Doc Graph](https://github.com/awesome5team/General-Resources-Box/issues/3)
 	- [HD Wall Explorer](https://github.com/awesome5team/General-Resources-Box/issues/4)
 	- [Divvy](https://github.com/awesome5team/General-Resources-Box/issues/5)
