@@ -1,6 +1,7 @@
 # General-Resources-Box
 
 - Application Gallery
+	- [HR Visualizer](https://github.com/awesome5team/General-Resources-Box/issues/12) - A large-scale data visualization platform for exploring data, collaborating with business leaders, and facilitating data-driven decision making. 	
 	- [Brand Graph](https://github.com/awesome5team/General-Resources-Box/issues/2) - Application for explore brands relationship, perceive commercial value and make wise decision.
 	- [Doc Graph](https://github.com/awesome5team/General-Resources-Box/issues/3)
 	- [HD Wall Explorer](https://github.com/awesome5team/General-Resources-Box/issues/4)
