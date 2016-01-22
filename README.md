@@ -8,7 +8,7 @@
 	- [Compliance360](https://github.com/awesome5team/General-Resources-Box/issues/6)
 - Development
 	- [Git: how git been used In projects](https://github.com/awesome5team/General-Resources-Box/issues/1)
-	- [How to use yeoman to quickly create a project structure](https://github.com/awesome5team/General-Resources-Box/issues/11)
+	- [Yeoman: How to use yeoman to quickly create a project structure](https://github.com/awesome5team/General-Resources-Box/issues/11)
 - Database
 	- [MySQL: how to execute a SQL file via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
 	- [MongoDB: how to import json file via Python](https://github.com/awesome5team/General-Resources-Box/issues/8)
