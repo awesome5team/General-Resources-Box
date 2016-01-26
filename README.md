@@ -1,7 +1,7 @@
 # General-Resources-Box
 
 - Application Gallery
-	- [HR Visualizer](https://github.com/awesome5team/General-Resources-Box/issues/12) 
+	- [HR Visualizer](https://github.com/awesome5team/General-Resources-Box/issues/12)
 	- [Brand Graph](https://github.com/awesome5team/General-Resources-Box/issues/2)
 	- [Doc Graph](https://github.com/awesome5team/General-Resources-Box/issues/3)
 	- [HD Wall Explorer](https://github.com/awesome5team/General-Resources-Box/issues/4)
@@ -15,4 +15,4 @@
 	- [MongoDB: install MongoDB community edition on OS X](https://github.com/awesome5team/General-Resources-Box/issues/9)
 	- [MongoDB: how to import json file via Python](https://github.com/awesome5team/General-Resources-Box/issues/9)
 - Web Components Reusable
-	- [Cool navigation whell based on d3.js]()
+	- [Cool navigation whell based on d3.js](https://github.com/awesome5team/General-Resources-Box/issues/14)
