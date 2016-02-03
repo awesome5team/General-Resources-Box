@@ -75,7 +75,7 @@ BrandGraph's code was hosted on [Github](https://github.com/Analytics-Innovation
 
 We use [Neo4j](http://neo4j.com/) as database because it's same-like with our bussiness needs, you can [download it](http://neo4j.com/download/) or just refer [Github](https://github.com/Analytics-Innovation-Incubator/brand_graph) README's step: **"db environment"** . 
 
-**Note: ** As the environment was ran locally, we just need to provide a database location then we can connect to it. But it was on a remote server, we may need to add username and password for access.
+***Note:***  As the environment was ran locally, we just need to provide a database location then we can connect to it. But it was on a remote server, we may need to add username and password for access.
 
 ### <a name="server">Server</a>
 
@@ -124,7 +124,7 @@ from config import NEO4J_DB_ADDR
 As there are some system environment would be used more than one time, we recommand to write all them in to one file:
 
 
-*/brand_graph/server/config*
+*/brand_graph/server/config.py*
 
 ```
 #...	
@@ -200,7 +200,7 @@ def get_brands():
 There are some tips need to be noticed when format an API in Flask:
 
 - Flask API is decorated with @app.route. The `app` is the Flask application instance imported from entrance module ***brand_graph/server/\_\_init\_\_.py***.
-- As our web and server are hosted in different container, we must add corss_origin decorator.
+- As our web and server are hosted in different container, we must add @corss_origin decorator.
 - The data access process belong to model, so we abstract all the query process in model Brands.
 
 ##### <a name="database-query">Database Query</a>
@@ -297,7 +297,7 @@ class Brand(object):
 	- By default we would show all  brands
 	- We can search by brand name, category name
 	- We can click on brand and show top 10 concerned brands
-- Filtess
+- Filters
 	- Can set the tweets followers as filter
 - Setting
 	- Simple setting: graph edge visible, text visible, animation toggle, etc.
@@ -317,23 +317,20 @@ angular.module('brand_graph')
 
 	var sigmaExport = {}, sigmaInstance;
 	
-  	// ...
+  	
   	
   	var _draw = function() {
   		// ...
   	}
   	
   	var _initInstance = function() {
-  		sigmaInstance = // init sigma instane logic 
+  		// ...
   	}
   	
   	_initInstance();
   	
-  	// ...
-  	
   	sigmaExport.s = sigmaInstance；
-  	sigmaExport.draw = _draw;；
-  	// ...
+  	sigmaExport.s.draw = _draw;；
   	
   	return sigmaExport;
 }]);
@@ -381,7 +378,7 @@ angular.module('brand_graph')
 	There are something need to be noticed:
 	1. The data's structure must satisfied some mode so that they could be known.
 	2. After read the data, you can still adjust nodes and edges before final refresh and drawing. Just loop the `sigmaInstance.graph.nodes()` or `sigmaInstance.graph.edges()`
-	3. The force variable is the paramters would been used for animation, you could refer to the official site for optional paramters.
+	3. Both defaults and force variable are the paramters would been used for graph drawing, you could refer to the official site for optional paramters.
 
 ###### <a name="how-to-use-redraw-the-graph">How to use redraw the graph</a>
 
@@ -425,7 +422,7 @@ sigmaInstance.refresh();
 There is a requirement in our project: Once you click a brand, place all concerned top 10 brands around it and hide the rest. What we gonna todo is change all nodes' visbible and coordinates attributes, below is the code fragment:
 
 
-*web/js/home/service.js*
+*/brand_graph/web/js/home/service.js*
 
 ```
 var placeAround = function(nodeId) {
@@ -470,7 +467,16 @@ To provide the user with toggle and filter function, we use different tools, her
 
 ###### <a name="ion-rangeslider">ion.rangeSlider</a>
 
-Sigma.js provide a lot of parameters for size, colors and animation. By use ion.rangeSlider we can detect the paramteter value change and trigger sigma redraw. Here is one slider example: 
+Sigma.js provide a lot of parameters for size, colors and animation. By using ion.rangeSlider we can detect the paramteter value change and trigger sigma redraw. Here is one slider example: 
+
+
+*/brand_graph/web/views/components/forceComponent.html*
+
+```
+<input id="slider-gravity" />
+``` 
+
+*/brand_graphp/web/js/home/directives.js*
 
 ```
 // define the element in page before instance slider
@@ -489,7 +495,7 @@ $("#slider-gravity").ionRangeSlider({
 ###### <a name="bootstrap-toggle">bootstrap toggle</a>
 
 
-It's not include in bootstrap or bootstrap-tpls, so you have to download and import the bootstrap-toggle before use. After than you can delcare the input element as text input and bind on/off events on it.
+It's not include in bootstrap or bootstrap-tpls, so you have to download and import the bootstrap-toggle before use. After than you can delcare the input element as checkbox input with data-toggle attribute and bind on/off events on it.
 
 */brand_graphp/web/views/components/forceComponent.html*
 
