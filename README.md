@@ -17,3 +17,5 @@
     - [Neo4j: Using Neo4j from Python](https://github.com/awesome5team/General-Resources-Box/issues/10)
 - Web Components Reusable
     - [Cool navigation whell based on d3.js](https://github.com/awesome5team/General-Resources-Box/issues/14)
+- Tools
+	- [How to Transfer Issue Page to PDF](https://github.com/awesome5team/General-Resources-Box/issues/18)	
