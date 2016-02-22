@@ -1,0 +1,628 @@
+<html lang="en" class=" is-copy-enabled is-u2f-enabled"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset="utf-8">
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-f3d3b5589c669556f5c4deab5b667991ddd976d44c8eaaf29dd86059bdbcdeb0.css" integrity="sha256-89O1WJxmlVb1xN6rW2Z5kd3ZdtRMjqryndhgWb283rA=" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-11604c0d8699009dd51b83a0ae1d8803d4b4a6296cb54624e5a1d0bb631afbbb.css" integrity="sha256-EWBMDYaZAJ3VG4Ogrh2IA9S0pilstUYk5aHQu2Ma+7s=" media="all" rel="stylesheet">
+
+
+
+
+    <link as="script" href="https://assets-cdn.github.com/assets/frameworks-cd88cfa185f31c4c64e9a8c91cc4e9a48397b1c75fe991a83213b993636997af.js" rel="preload">
+    <link as="script" href="https://assets-cdn.github.com/assets/github-fb6d86d3abdd91a2a514dc1a43033b720c04ef5d9eb67fcecabb53ad96464e55.js" rel="preload">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+
+
+    <title>Application Deploy Guidance · Issue #17 · awesome5team/General-Resources-Box</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="https://avatars1.githubusercontent.com/u/9210625?v=3&amp;s=400" name="twitter:image:src"><meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="Application Deploy Guidance · Issue #17 · awesome5team/General-Resources-Box" name="twitter:title"><meta content="Table of Contents
+
+
+
+Deploy Databases
+
+
+
+Deploy Neo4j to graphenedb Platform
+
+
+Prepare Data of Neo4j
+Import the Compress File to graphededb
+
+
+
+Deploy Mongodb to mongolab
+
+
+Prepare an Available mong..." name="twitter:description">
+      <meta content="https://avatars1.githubusercontent.com/u/9210625?v=3&amp;s=400" property="og:image"><meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="Application Deploy Guidance · Issue #17 · awesome5team/General-Resources-Box" property="og:title"><meta content="https://github.com/awesome5team/General-Resources-Box/issues/17" property="og:url"><meta content="Table of Contents
+
+
+
+Deploy Databases
+
+
+
+Deploy Neo4j to graphenedb Platform
+
+
+Prepare Data of Neo4j
+Import the Compress File to graphededb
+
+
+
+Deploy Mongodb to mongolab
+
+
+Prepare an Available mong..." property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/Mzk4Mjk4Nzo3NjJiNGRkNzUzY2FjNTFlYTdkZWE5ZTliNzY4ZDFiODozZTgwZjA4MWU1Y2Y4NzE1Yzg2YTFlOGE3OWYwN2EyZjM3MDgwYmRmMTM3MGZlNmIyN2Y5OTk2NWRjOTNhNGJm--cf6cc67317fc199e3c1f19ca02a489c375e0196e">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_issues" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="D20D70D3:558A:1ECD563:56B1E61A" name="octolytics-dimension-request_id"><meta content="3982987" name="octolytics-actor-id"><meta content="tangyefei" name="octolytics-actor-login"><meta content="9a84c476d4b92e1d7a3ad6cc2004a16926cdea695f76f584b88522c28c0c6c00" name="octolytics-actor-hash">
+<meta content="/<user-name>/<repo-name>/issues/show" data-pjax-transient="true" name="analytics-location">
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="tangyefei">
+
+        <meta name="expected-hostname" content="github.com">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta content="57e77fb66b23279c87fe9cba68b440ff49efb8ba" name="form-nonce">
+
+    <meta http-equiv="x-pjax-version" content="34d1c8193b73ad1a367abf0cffc16cbd">
+
+
+  <meta name="description" content="Contribute to General-Resources-Box development by creating an account on GitHub.">
+  <meta name="go-import" content="github.com/awesome5team/General-Resources-Box git https://github.com/awesome5team/General-Resources-Box.git">
+
+  <meta content="16698812" name="octolytics-dimension-user_id"><meta content="awesome5team" name="octolytics-dimension-user_login"><meta content="49629470" name="octolytics-dimension-repository_id"><meta content="awesome5team/General-Resources-Box" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="49629470" name="octolytics-dimension-repository_network_root_id"><meta content="awesome5team/General-Resources-Box" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/awesome5team/General-Resources-Box/commits/master.atom" rel="alternate" title="Recent Commits to General-Resources-Box:master" type="application/atom+xml">
+
+
+  </head>
+
+
+  <body class="logged_in   env-production macintosh vis-public" style="
+    width: 740px;
+    margin: 0 auto;
+"><div class="edit-comment-hide">
+      <div class="comment-body markdown-body markdown-format js-comment-body">
+          <h1>Table of Contents</h1>
+
+<ul>
+<li>
+<a href="#deploy-databases">Deploy Databases</a>
+
+<ul>
+<li>
+<a href="#deploy-neo4j-to-graphenedb-platform">Deploy Neo4j to graphenedb Platform</a>
+
+<ul>
+<li><a href="#prepare-data-of-neo4j">Prepare Data of Neo4j</a></li>
+<li><a href="#import-the-compress-file-to-graphededb">Import the Compress File to graphededb</a></li>
+</ul>
+</li>
+<li>
+<a href="#deploy-mongodb-to-mongolab">Deploy Mongodb to mongolab</a>
+
+<ul>
+<li><a href="#prepare-an-available-mongolab-account">Prepare an Available mongolab Account</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#deploy-to-heroku">Deploy Source Code to Heroku</a>
+
+<ul>
+<li><a href="#set-up">Set Up</a></li>
+<li>
+<a href="#prepare-the-app">Prepare the App</a>
+
+<ul>
+<li><a href="#clone-heroku-repo">Case1: Clone Heroku Repo</a></li>
+<li><a href="#use-local-repo">Case2: Use Local Repo</a></li>
+</ul>
+</li>
+<li><a href="#deploy-the-app">Deploy the App</a></li>
+<li><a href="#view-logs">View Logs</a></li>
+</ul>
+</li>
+<li>
+<a href="#example">Example: Brandgraph Deploy</a>
+
+<ul>
+<li>
+<a href="#deploy-brandgraph-database-neo4j">Brandgraph Database: Neo4j</a>
+
+<ul>
+<li><a href="#prepare-compress-file-of-brandgraph-database">Prepare Compress File of Brandgraph Database</a></li>
+<li><a href="#import-the-compress-file-to-graphededb">Import the Compress File to graphededb</a></li>
+</ul>
+</li>
+<li><a href="#deploy-brandgraph-api-to-heroku">Deploy Brandgraph API to Heroku</a></li>
+<li><a href="#deploy-brandgraph-web-to-heroku">Deploy Brandgraph Web to Heroku</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+
+<h1><a name="user-content-deploy-databases">Deploy Databases</a></h1>
+
+<h2><a name="user-content-deploy-neo4j-to-graphenedb-platform">Deploy Neo4j to graphenedb Platform</a></h2>
+
+<h3><a name="user-content-prepare-data-of-neo4j">Prepare Data of Neo4j</a></h3>
+
+<ul>
+<li>
+<p>To start neo4j, issue the following command in a system shell and make sure the site http://localhost:7474/browser/ to visit normal:</p>
+
+<pre><code>$ neo4j console
+</code></pre>
+</li>
+<li>
+<p>To compress database file -- data.db, issue the following command in a system shell: </p>
+
+<pre><code>$ tar -cjf data.tar.bz2 %YOUR_NEO4J_DB_PATH%/neo4j-community/data/data.db
+</code></pre>
+
+<h3><a name="user-content-import-the-compress-file-to-graphededb">Import the Compress File to graphededb</a></h3>
+</li>
+<li><p>To register a <a href="http://app.graphenedb.com/">graphededb</a> account by your email</p></li>
+<li> Click the 'Create database' button</li>
+<li> Check to the 'Admin' tab and click 'Restore database' button, then click 'upload file', choose the compress file 'data.tar.bz', and click 'Restore' waiting for progress 100%</li>
+<li> Check to 'Connection' Tab and you will see the REST URL, REST USERNAME and REST PASSWORD</li>
+</ul>
+
+<h2>
+<a name="user-content-deploy-mongodb-to-mongolab">Deploy Mongodb to </a><a href="https://mongolab.com/">mongolab</a>
+</h2>
+
+<h3><a name="user-content-prepare-an-available-mongolab-account">Prepare an Available mongolab Account</a></h3>
+
+<ul>
+<li>To register a <a href="https://mongolab.com/">mongolab</a> account and login in</li>
+<li>Click <code>Create new</code> button</li>
+<li>Choose a free cloud provider, fill in the <code>database name</code> in the form and cilck the <code>create new MongoDB deployment</code> button</li>
+<li>Check to the <code>Users</code> tab and click the <code>Add database user</code> button, fill in your usename and password</li>
+<li>
+<p>Check to the <code>Tools</code> tab and find which data type you want import, you will see the command follow:</p>
+
+<pre><code>Prepare a available json file
+Import collection
+% mongoimport -h &lt;Your own mongolab REST URL&gt; -d &lt;databasename&gt; -c &lt;collection&gt; -u &lt;user&gt; -p &lt;password&gt; --file &lt;input file&gt;
+Export collection
+% mongoexport -h &lt;Your own mongolab REST URL&gt; -d &lt;databasename&gt; -c &lt;collection&gt; -u &lt;user&gt; -p &lt;password&gt; -o &lt;output file&gt;
+</code></pre>
+
+<pre><code>Prepare a available csv file
+Import collection
+% mongoimport -h &lt;Your own mongolab REST URL&gt; -d &lt;databasename&gt; -c &lt;collection&gt; -u &lt;user&gt; -p &lt;password&gt; --file &lt;input .csv file&gt; --type csv --headerline
+Export collection
+% mongoexport -h &lt;Your own mongolab REST URL&gt; -d &lt;databasename&gt; -c &lt;collection&gt; -u &lt;user&gt; -p &lt;password&gt; -o &lt;output .csv file&gt; --csv -f &lt;comma-separated list of field names&gt;
+</code></pre>
+
+<p>Note: : ds051645.mongolab.com:51645<br>
+: the name of database created by step 3<br>
+: the name of collection you will create<br>
+-u  -p : the account of created by step 4<br>
+&lt;input file&gt;: the name of import file</p>
+</li>
+</ul>
+
+<h1><a name="user-content-deploy-to-heroku">Deploy Source Code to Heroku</a></h1>
+
+<h2><a name="user-content-set-up">Set Up</a></h2>
+
+<p>Hang on for a few more minutes to learn how it all works, so you can make the most out of Heroku.<br>
+The tutorial assumes that you have:</p>
+
+<ul>
+<li>Ceate a free <a href="https://signup.heroku.com/dc">Heroku account</a>
+</li>
+<li>Run the application locally successfully</li>
+</ul>
+
+<p>In this step you will install the Heroku Toolbelt. This provides you access to the Heroku Command Line Interface (CLI), which can be used for managing and scaling your applications and add-ons. A key part of the toolbelt is the heroku local command, which can help in running your applications locally.<br>
+Once installed, you can use the heroku command from your command shell.<br>
+Log in using the email address and password you used when creating your Heroku account:</p>
+
+<pre><code>$  heroku login
+Enter your Heroku credentials.
+Email: python@example.com
+Password:
+...
+</code></pre>
+
+<p>Authenticating is required to allow both the heroku and git commands to operate.</p>
+
+<h2><a name="user-content-prepare-the-app">Prepare the App</a></h2>
+
+<p>In this step, you will prepare a simple application that can be deployed. There are two ways to structure the application, we would introduce them deperately: </p>
+
+<h3><a name="user-content-clone-heroku-repo">Case1: Clone Heroku Repo</a></h3>
+
+<p>Execute the following commands to clone the sample application：   </p>
+
+<pre><code>$ git clone &lt;HEROKU-DEMO-REPO-PATH&gt;
+$ cd python-getting-started
+</code></pre>
+
+<p>You now have a functioning git repository that contains a simple application as well as a requirements.txt file. </p>
+
+<p>If you wanna to deploy a python application,  should be replaced with the demo application path,for example:<a href="https://github.com/heroku/python-getting-started.git">https://github.com/heroku/python-getting-started.git</a>, for all optional applications <a href="https://devcenter.heroku.com/start">please visit here</a>.</p>
+
+<h2><a name="user-content-use-local-repo">Case2: Use Local Repo</a></h2>
+
+<p>Assume you already have a repo in local and it can ran successfully, what you need is to define you Procfile and bind the heroku path in next step. Heroku would find the Procfile in application's root directory as the boot script.  </p>
+
+<p>*<em>Example: Python Application's Configuration: *</em></p>
+
+<p><em>/Procfile</em></p>
+
+<pre><code>web: gunicorn run:app --log-file -
+</code></pre>
+
+<p><em>/run.py</em></p>
+
+<pre><code>from app import app
+</code></pre>
+
+<p><em>/app/__init__.pypy</em></p>
+
+<pre><code>#...
+
+from flask import Flask
+
+app = Flask(__name__, static_url_path='')
+app.config.from_object('config')
+
+#...
+
+</code></pre>
+
+<p>*<em>Example: Node.js Application's Configuration: *</em></p>
+
+<p><em>/Procfile</em></p>
+
+<pre><code>web: node web-server.js
+</code></pre>
+
+<p><em>/web-server.js</em></p>
+
+<pre><code>var express = require('express');
+var app = express();
+
+app.set('port', (process.env.PORT || 8000));
+app.use(express.static(__dirname));
+
+app.get('/', function(request, response) {
+   response.sendfile('index.html', {root: __dirname })
+});
+
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
+});
+
+</code></pre>
+
+<p>Note: as the web-server.js deplends on express package, make sure you have config it in your package.json.</p>
+
+<h2><a name="user-content-deploy-the-app">Deploy the App</a></h2>
+
+<p>In this step you will deploy the app to Heroku.<br>
+Create an app on Heroku, which prepares Heroku to receive your source code:</p>
+
+<pre><code>$  heroku create
+Creating lit-bastion-5032 in organization heroku... done, stack is cedar-14
+http://lit-bastion-5032.herokuapp.com/ | https://git.heroku.com/lit-bastion-5032.git
+Git remote heroku added
+</code></pre>
+
+<p>When you create an app, a git remote (called heroku) is also created and associated with your local git repository.<br>
+Heroku generates a random name (in this case lit-bastion-5032) for your app, or you can pass a parameter to specify your own app name.<br>
+Now deploy your code:</p>
+
+<pre><code>$ git push heroku master
+Counting objects: 196, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (99/99), done.
+Writing objects: 100% (196/196), 33.21 KiB | 0 bytes/s, done.
+Total 196 (delta 82), reused 196 (delta 82)
+Compressing source files... done.
+Building source:
+
+-----&gt; Python app detected
+-----&gt; Installing runtime (python-2.7.11)
+-----&gt; Installing dependencies with pip
+   Collecting dj-database-url==0.3.0 (from -r requirements.txt (line 1))
+   Downloading dj_database_url-0.3.0-py2.py3-none-any.whl
+   Collecting Django==1.9.1 (from -r requirements.txt (line 2))
+   Downloading Django-1.9.1-py2.py3-none-any.whl (6.6MB)
+   Collecting gunicorn==19.4.5 (from -r requirements.txt (line 3))
+   Downloading gunicorn-19.4.5-py2.py3-none-any.whl (112kB)
+   Collecting psycopg2==2.6.1 (from -r requirements.txt (line 4))
+   Downloading psycopg2-2.6.1.tar.gz (371kB)
+   Collecting whitenoise==2.0.6 (from -r requirements.txt (line 5))
+   Downloading whitenoise-2.0.6-py2.py3-none-any.whl
+   Installing collected packages: dj-database-url, Django, gunicorn, psycopg2, whitenoise
+   Running setup.py install for psycopg2
+   Successfully installed Django-1.9.1 dj-database-url-0.3.0 gunicorn-19.4.5 psycopg2-2.6.1 whitenoise-2.0.6
+
+-----&gt; Preparing static assets
+   Running collectstatic...
+   ...
+   58 static files copied to '/app/staticfiles', 58 post-processed.
+
+-----&gt; Discovering process types
+   Procfile declares types -&gt; web
+
+-----&gt; Compressing... done, 44.1MB
+-----&gt; Launching...
+   Released v4
+   http://lit-bastion-5032.herokuapp.com/ deployed to Heroku
+
+To git@heroku.com:lit-bastion-5032.git
+ * [new branch]      master -&gt; master
+</code></pre>
+
+<p>While the deployment is happening, you may see a syntax error during the install for gunicorn about invalid syntax for the line yield from self.wsgi.close(). That error can be ignored.<br>
+The application is now deployed. Ensure that at least one instance of the app is running:</p>
+
+<pre><code>$  heroku ps:scale web=1
+</code></pre>
+
+<p>Now visit the app at the URL generated by its app name. As a handy shortcut, you can open the website as follows:</p>
+
+<pre><code>$  heroku open
+</code></pre>
+
+<h2><a name="user-content-view-logs">View Logs</a></h2>
+
+<p>Heroku treats logs as streams of time-ordered events aggregated from the output streams of all your app and Heroku components, providing a single channel for all of the events.<br>
+View information about your running app using one of the <a href="https://devcenter.heroku.com/articles/logging">logging commands</a>, heroku logs:</p>
+
+<pre><code>heroku logs --tail
+2014-08-15T15:17:55.780361+00:00 app[web.1]: 2014-08-15 15:17:55 [2] [INFO] Listening at: http://0.0.0.0:19585 (2)
+2014-08-15T15:17:55.780488+00:00 app[web.1]: 2014-08-15 15:17:55 [2] [INFO] Using worker: sync
+2014-08-15T15:17:55.830489+00:00 app[web.1]: 2014-08-15 15:17:55 [7] [INFO] Booting worker with pid: 7
+2014-08-15T15:17:55.779494+00:00 app[web.1]: 2014-08-15 15:17:55 [2] [INFO] Starting gunicorn 19.0.0
+2014-08-15T15:17:56.321151+00:00 heroku[web.1]: State changed from starting to up
+2014-08-15T15:17:57.847806+00:00 heroku[router]: at=info method=GET path="/" host=lit-bastion-5032.herokuapp.com request_id=7fd99883-20ec-43d5-8b2d-5204351cdf2d fwd="94.174.204.242" dyno=web.1 connect=1ms service=240ms status=200 bytes=679
+</code></pre>
+
+<p>Visit your application in the browser again, and you’ll see another log message generated.<br>
+Press <code>Control+C</code> to stop streaming the logs.</p>
+
+<h1><a name="user-content-example">Example: Brandgraph Deploy</a></h1>
+
+<h2><a name="user-content-deploy-brandgraph-database-neo4j">Deploy Brandgraph Database: neo4j</a></h2>
+
+<h3><a name="user-content-prepare-compress-file-of-brandgraph-database">Prepare Compress File of Brandgraph Database</a></h3>
+
+<ul>
+<li>
+<p>To start neo4j, issue the following command in a system shell and make sure the site http://localhost:7474/browser/ to visit normal:</p>
+
+<pre><code>$ neo4j console
+</code></pre>
+</li>
+<li>
+<p>To compress database file -- graph.db, issue the following command in a system shell:</p>
+
+<pre><code>$ tar -cjf graph.tar.bz2 %YOUR_NEO4J_DB_PATH%/neo4j-community-2.1.6/data/graph.db
+</code></pre>
+
+<p>Note：%YOUR_NEO4J_DB_PATH% is the address of your personal computer</p>
+</li>
+</ul>
+
+<h3><a name="user-content-import-the-compress-file-to-graphededb">Import the Compress File to graphededb</a></h3>
+
+<ul>
+<li>
+<p>Login in the site <a href="http://app.graphenedb.com/">http://app.graphenedb.com/</a> by following account：</p>
+
+<p>username: <a href="mailto:pwc.aia@gmail.com">pwc.aia@gmail.com</a></p>
+
+<p>password: Pwcwelcome1</p>
+</li>
+<li><p>Click the <code>Create database</code> button：</p></li>
+<li><p>Check to<code>Admin</code>Tab, click <code>Restore database</code> button, click <code>upload file</code>, choose the above bz2 file and click <code>Restore</code> button, waiting for progress 100%</p></li>
+<li><p>Check to <code>Connection</code> Tab, and you will see the REST URL, REST USERNAME and REST PASSWORD</p></li>
+</ul>
+
+<h2><a name="user-content-deploy-brandgraph-api-to-heroku">Deploy Brandgraph API to Heroku</a></h2>
+
+<ul>
+<li>
+<p>Make sure have the clone of brandgrph code, else issue the following command in a system shell:</p>
+
+<pre><code>$ git clone https://github.com/Analytics-Innovation-Incubator/brand_graph.git
+</code></pre>
+</li>
+<li>
+<p>Check to the server folder with the following command：</p>
+
+<pre><code>$ cd server
+</code></pre>
+</li>
+<li>
+<p>Replace the deployed address of neo4j database in `config.py' file</p>
+
+<pre><code>NEO4J_DB_ADDR = "http://BrandGraph:rQTeP3MmZHsoq37MipMw@brandgraph.sb06.stations.graphenedb.com:24789/db/data/"
+</code></pre>
+</li>
+<li>
+<p>Modify details of requirements.txt, add following script:</p>
+
+<pre><code>gunicorn==19.2.1
+</code></pre>
+</li>
+<li>
+<p>Define a procfile，and add the following script：</p>
+
+<pre><code>web: gunicorn run:app --log-file -
+</code></pre>
+
+<p>Note: run is the name of starting file of API</p>
+</li>
+<li>
+<p>Login in heroku with the following account:</p>
+
+<pre><code>$ heroku login
+Email: pwc.aia@gmail.com
+Password (typing will be hidden): Pwcwelcome1
+</code></pre>
+</li>
+<li>
+<p>Create an app on Heroku, which prepares Heroku to receive your source code</p>
+
+<pre><code>$ heroku create %APP_NAME%
+</code></pre>
+
+<p><code>%APP_NAME%</code> can be brandgraphapi or brandgraphapidev</p>
+
+<pre><code>$ git init
+$ git remote add heroku %HEROKU_REPO_URL%
+</code></pre>
+
+<p>%HEROKU_REPO_URL% is create by above <code>https://git.heroku.com/brandgraphapidev.git</code> or <code>https://git.heroku.com/brandgraphapidev.git</code>.</p>
+</li>
+<li>
+<p>Deploy API</p>
+
+<pre><code>$ git add .
+$ git commit -m 'create remote repository'
+$ git push heroku master
+</code></pre>
+</li>
+<li>
+<p>Test after deploy</p>
+
+<pre><code>$ heroku ps:scale web=1
+$ heroku open
+</code></pre>
+
+<p>view logs if have any issues：</p>
+
+<pre><code>$ heroku logs --tail
+</code></pre>
+</li>
+<li>
+<p>Errors may occur</p>
+
+<pre><code> Error: unsupported locale setting
+</code></pre>
+
+<p>Search keywords <code>locale</code> by command <code>COMMOND+SHIFT+F</code>and remove the it</p>
+</li>
+</ul>
+
+<h2><a name="user-content-deploy-brandgraph-web-to-heroku">Deploy Brandgraph Web to Heroku</a></h2>
+
+<ul>
+<li>
+<p>Check to the web folder by following command:</p>
+
+<pre><code>$ cd web
+</code></pre>
+</li>
+<li>
+<p>Define a procfile，and add the following script：</p>
+
+<pre><code>web: node web-server.js
+</code></pre>
+
+<p>Note: web-server.js is starting file of web</p>
+</li>
+<li>
+<p>modify details of package.json：</p>
+
+<pre><code>"express": "4.13.3"
+</code></pre>
+</li>
+<li>
+<p>Login in heroku by the following account:</p>
+
+<pre><code>$ heroku login
+Email: pwc.aia@gmail.com
+Password (typing will be hidden): Pwcwelcome1
+</code></pre>
+</li>
+<li>
+<p>Create an app on Heroku, which prepares Heroku to receive your source code:</p>
+
+<pre><code>$ heroku create %APP_NAME%
+</code></pre>
+
+<p><code>%APP_NAME%</code> is brandgraph or brandgraphdev</p>
+
+<pre><code>$ git init
+$ git remote add heroku %HEROKU_REPO_URL%
+</code></pre>
+
+<p>%HEROKU_REPO_URL% is create by above <code>https://git.heroku.com/brandgraphdev.git</code>or <code>https://git.heroku.com/brandgraphdev.git</code>.</p>
+</li>
+<li>
+<p>Deploy</p>
+
+<pre><code>$ git add .
+$ git commit -m 'create remote repository'
+$ git push heroku master
+</code></pre>
+</li>
+<li>
+<p>Test URL after deploy</p>
+
+<pre><code>$ heroku ps:scale web=1
+$ heroku open
+</code></pre>
+</li>
+</ul>
+
+<h1><a name="user-content-reference">Reference</a></h1>
+
+<ul>
+<li><a href="https://devcenter.heroku.com/articles/getting-started-with-python#deploy-the-app">Getting Started with Python on Heroku</a></li>
+<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction">Getting Started with Node.js on Heroku</a></li>
+</ul>
+      </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,794 @@
+<html lang="en" class=" is-copy-enabled is-u2f-enabled"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset="utf-8">
+
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-f3d3b5589c669556f5c4deab5b667991ddd976d44c8eaaf29dd86059bdbcdeb0.css" integrity="sha256-89O1WJxmlVb1xN6rW2Z5kd3ZdtRMjqryndhgWb283rA=" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github2-11604c0d8699009dd51b83a0ae1d8803d4b4a6296cb54624e5a1d0bb631afbbb.css" integrity="sha256-EWBMDYaZAJ3VG4Ogrh2IA9S0pilstUYk5aHQu2Ma+7s=" media="all" rel="stylesheet">
+
+
+
+
+    <link as="script" href="https://assets-cdn.github.com/assets/frameworks-cd88cfa185f31c4c64e9a8c91cc4e9a48397b1c75fe991a83213b993636997af.js" rel="preload">
+    <link as="script" href="https://assets-cdn.github.com/assets/github-fb6d86d3abdd91a2a514dc1a43033b720c04ef5d9eb67fcecabb53ad96464e55.js" rel="preload">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=1020">
+
+
+    <title>MongoDB: Install, Connect, Insert, Query, Examples · Issue #8 · awesome5team/General-Resources-Box</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="https://avatars2.githubusercontent.com/u/11567174?v=3&amp;s=400" name="twitter:image:src"><meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="MongoDB: Install, Connect, Insert, Query, Examples · Issue #8 · awesome5team/General-Resources-Box" name="twitter:title"><meta content="Table of Contents
+
+
+
+Install and Run MongoDB
+
+
+Install Homebrew
+Install MongoDB
+Run MongoDB
+Use mongo Shell
+
+
+
+MongoDB Common Operation
+
+
+
+Data Init
+
+
+Case1: Import JSON
+Case2: Import CSV
+
+
+
+Connec..." name="twitter:description">
+      <meta content="https://avatars2.githubusercontent.com/u/11567174?v=3&amp;s=400" property="og:image"><meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="MongoDB: Install, Connect, Insert, Query, Examples · Issue #8 · awesome5team/General-Resources-Box" property="og:title"><meta content="https://github.com/awesome5team/General-Resources-Box/issues/8" property="og:url"><meta content="Table of Contents
+
+
+
+Install and Run MongoDB
+
+
+Install Homebrew
+Install MongoDB
+Run MongoDB
+Use mongo Shell
+
+
+
+MongoDB Common Operation
+
+
+
+Data Init
+
+
+Case1: Import JSON
+Case2: Import CSV
+
+
+
+Connec..." property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/Mzk4Mjk4Nzo3NjJiNGRkNzUzY2FjNTFlYTdkZWE5ZTliNzY4ZDFiODowNjViOTBjNWJhMTZkYzE1MDIzMjllYWMzMTY4NDIwMGExNmY1NGUyZjA1OGE2ZDU3OWI5NmY5OWMxNWE3MmY1--982eedef7f9cf8a4ead54666dcf50f92c61bd7bf">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_issues" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="D20D70D3:5D35:F735ED:56B1E809" name="octolytics-dimension-request_id"><meta content="3982987" name="octolytics-actor-id"><meta content="tangyefei" name="octolytics-actor-login"><meta content="9a84c476d4b92e1d7a3ad6cc2004a16926cdea695f76f584b88522c28c0c6c00" name="octolytics-actor-hash">
+<meta content="/<user-name>/<repo-name>/issues/show" data-pjax-transient="true" name="analytics-location">
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="tangyefei">
+
+        <meta name="expected-hostname" content="github.com">
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta content="57e77fb66b23279c87fe9cba68b440ff49efb8ba" name="form-nonce">
+
+    <meta http-equiv="x-pjax-version" content="34d1c8193b73ad1a367abf0cffc16cbd">
+
+
+  <meta name="description" content="Contribute to General-Resources-Box development by creating an account on GitHub.">
+  <meta name="go-import" content="github.com/awesome5team/General-Resources-Box git https://github.com/awesome5team/General-Resources-Box.git">
+
+  <meta content="16698812" name="octolytics-dimension-user_id"><meta content="awesome5team" name="octolytics-dimension-user_login"><meta content="49629470" name="octolytics-dimension-repository_id"><meta content="awesome5team/General-Resources-Box" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="49629470" name="octolytics-dimension-repository_network_root_id"><meta content="awesome5team/General-Resources-Box" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/awesome5team/General-Resources-Box/commits/master.atom" rel="alternate" title="Recent Commits to General-Resources-Box:master" type="application/atom+xml">
+
+
+  </head>
+
+
+  <body class="logged_in   env-production macintosh vis-public"><div class="edit-comment-hide"style="
+    width: 740px;
+    margin: 0 auto;
+">
+      <div class="comment-body markdown-body markdown-format js-comment-body">
+          <h1>Table of Contents</h1>
+
+<ul>
+<li>
+<a href="#install-and-run-mongodb">Install and Run MongoDB</a>
+
+<ul>
+<li><a href="#install-homebrew">Install Homebrew</a></li>
+<li><a href="#install-mongodb">Install MongoDB</a></li>
+<li><a href="#run-mongodb">Run MongoDB</a></li>
+<li><a href="#use-mongo-shell">Use mongo Shell</a></li>
+</ul>
+</li>
+<li>
+<a href="#mongodb-common-operation">MongoDB Common Operation</a>
+
+<ul>
+<li>
+<a href="#data-init">Data Init</a>
+
+<ul>
+<li><a href="#import-json">Case1: Import JSON</a></li>
+<li><a href="#import-csv">Case2: Import CSV</a></li>
+</ul>
+</li>
+<li>
+<a href="#connection">Connection</a>
+
+<ul>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#connect-with-python">Connect with Python</a></li>
+</ul>
+</li>
+<li><a href="#insert">Insert</a></li>
+<li><a href="#query">Query</a></li>
+</ul>
+</li>
+<li><a href="#python-code-for-mongodb-operation">Python Code for MongoDB Operation</a></li>
+<li>
+<a href="#application-examples">Applications Examples</a>
+
+<ul>
+<li><a href="#HD-Wall-Explorer">HD-Wall-Explorer</a></li>
+<li><a href="#divvy">Divvy</a></li>
+<li><a href="#compliance360-API">Compliance360-API</a></li>
+</ul>
+</li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+
+<p><strong>Note: the document is based on Mac OS X.</strong></p>
+
+<h2><a name="install-and-run-mongodb">Install and Run MongoDB</a></h2>
+
+<ul>
+<li>
+<p><a name="install-homebrew">Install Homebrew</a></p>
+
+<p>You can download to install <a href="http://brew.sh/">Homebrew</a>, or if you already installed it, just update it with following command:</p>
+
+<pre><code>$ brew update
+</code></pre>
+</li>
+<li>
+<p><a name="install-mongodb">Install MongoDB</a></p>
+
+<p>To install the MongoDB, issue the following command in the terminal:</p>
+
+<pre><code>$ brew install mongodb
+</code></pre>
+</li>
+<li>
+<p><a name="run-mongodb">Run MongoDB</a></p>
+
+<p>Note: By default the brew would config the MongoDB path, you can execute the <code>sudo mongod</code> to test it. If the command is unknown, you may have to refer to this step's guidance.</p>
+
+<p>First, add the mongodb path to $PATH, issue the following command:</p>
+
+<pre><code>$ vi ~/.bash_profile
+
+</code></pre>
+
+<p>Add the following code at the end of the file:</p>
+
+<pre><code>export PATH=$PATH:&lt;PATH-FOR-MONGODB-PATH&gt;
+</code></pre>
+
+<p>Then execute the following command to update the .bash_profile file:</p>
+
+<pre><code>$ source ~/.bash_profile
+</code></pre>
+
+<p>Before start MongoDB for the first time, you need to check if there is /data/db folder, if it has this folder, you can run the following command:</p>
+
+<pre><code> $ sudo mongod
+</code></pre>
+
+<p>If the folder do not exist, you need to create this folder, then run the start command:</p>
+
+<pre><code>$ mkdir -p /data/db
+$ sudo mongod
+</code></pre>
+</li>
+<li>
+<p><a name="use-mongo-shell">Use mongo Shell</a></p>
+
+<p>Once you have <a href="https://docs.mongodb.org/getting-started/shell/installation/">installed and started</a> MongoDB, you can connect to your MongoDB instance via  mongo shell. You can execute SQLs for the common database operation.</p>
+
+<p>On the same system where the MongoDB is running, open a terminal window and run the mongo shell with the following command:</p>
+
+<p>$ ./mongo</p>
+
+<blockquote>
+<p>show dbs<br>
+    WallExplorer  0.000GB<br>
+    connTest      0.000GB<br>
+    local         0.000GB<br>
+    test          0.000GB</p>
+</blockquote>
+
+<p>Note: Ensure that MongoDB is running before attempting to launch the mongo shell.</p>
+</li>
+</ul>
+
+<h2><a name="mongodb-common-operation">MongoDB Common Operation</a></h2>
+
+<h3><a name="data-init">Data Init</a></h3>
+
+<p>Use <code>mongoimport</code> to import data from json/csv files to database, <code>mongoexport</code> to export data from database as json/csv files.</p>
+
+<p>In the following examples, mongoimport imports data from the file json or csv into the database marketing's contacts collection. As the database was hosted remote, connection must have authentication.</p>
+
+<h4><a name="import-json">Case1: Import JSON</a></h4>
+
+<pre><code>  $ mongoimport --host mongodb1.example.net --port 37017 --username user --password pass --collection contacts --db marketing --file /opt/ backups/mdb1-examplenet.json
+</code></pre>
+
+<h4><a name="import-csv">Case2: Import CSV</a></h4>
+
+<pre><code>   $ mongoimport -db marketing -collection contacts --type csv -headerline --file /opt/backups/contacts.csv
+</code></pre>
+
+<h3><a name="connection">Connection</a></h3>
+
+<h4><a name="methods">Methods</a></h4>
+
+<p>There are some connection methods using to provide connection</p>
+
+<ul>
+<li><p><a href="https://docs.mongodb.org/manual/reference/method/Mongo.getDB/#Mongo.getDB">Mongo.getDB()</a> - provides access to database objects from the mongo shell or from a JavaScript file, returns a database object.</p></li>
+<li>
+<p><a href="https://docs.mongodb.org/manual/reference/method/Mongo.getReadPrefMode/#Mongo.getReadPrefMod.">Mongo.getReadPrefMode()</a> - return the current read preference mode, as in the following example:</p>
+
+<pre><code>db.getMongo().getReadPrefMode()
+</code></pre>
+</li>
+<li>
+<p><a href="https://docs.mongodb.org/manual/reference/method/Mongo.getReadPrefTagSet/#Mongo.getReadPrefTagSet">Mongo.getReadPrefTagSet()</a> - used to return the current read preference tag set for the MongoDB connection.</p>
+
+<pre><code>db.getMongo().getReadPrefTagSet()
+</code></pre>
+</li>
+<li>
+<p><a href="https://docs.mongodb.org/manual/reference/method/Mongo.setReadPref/#Mongo.setReadPref">Mongo.setReadPref()</a> - set the read preference for the MongoDB connection, the following operation can set a read preference mode.</p>
+
+<pre><code>db.getMongo().setReadPref('primaryPreferred')
+</code></pre>
+</li>
+<li>
+<p><a href="https://docs.mongodb.org/manual/reference/method/Mongo.setSlaveOk/#Mongo.setSlaveOk">Mongo.setSlaveOk()</a> - permits read operations from non-master(i.e slave or secondary) instances. Practically, use this method in the following form:</p>
+
+<pre><code>db.getMongo().setSlaveOk()
+</code></pre>
+</li>
+<li><p><a href="https://docs.mongodb.org/manual/reference/method/Mongo/#Mongo">Mongo()</a> - used to create a new connection object.    </p></li>
+<li><p>connect() - used to connect to a MongoDB instance and to a specified database on that instance. </p></li>
+</ul>
+
+<h4><a name="connect-with-python">Connect with Python</a></h4>
+
+<p>PyMongo is a Python package used to interact with MongoDB database.</p>
+
+<ul>
+<li>
+<p>Prerequisites</p>
+
+<p>Before start, make sure that you have the PyMongo distribution installed. In the Python shell, the following should run success without raising an exception:</p>
+
+<pre><code>&gt;&gt;&gt; import pymongo
+</code></pre>
+
+<p>This tutorial also assumes that a MongoDB instance is running on the default host and port. Assuming you have <a href="https://docs.mongodb.org/manual/installation/">downloaded and installed</a> MongoDB, you can start it like so:</p>
+
+<pre><code>$ mongod
+</code></pre>
+</li>
+<li>
+<p>Create a Connection</p>
+
+<p>The first step when working with PyMongo is to create a <a href="http://api.mongodb.org/python/current/api/pymongo/mongo_client.html#pymongo.mongo_client.MongoClient">MongoClient</a> to the running mongod instance:</p>
+
+<pre><code>&gt;&gt;&gt; from pymongo import MongoClient
+&gt;&gt;&gt; client = MongoClient()
+</code></pre>
+
+<p>The above code will connect on the default host and port. You can also specify the host and port explicitly, as follow:</p>
+
+<pre><code>&gt;&gt;&gt; client = MongoClient('localhost', 27017)
+</code></pre>
+
+<p>Or use the MongoDB URI format:</p>
+
+<pre><code>&gt;&gt;&gt; client = MongoClient('mongodb://localhost:27017/')
+</code></pre>
+</li>
+<li>
+<p>Get a Database</p>
+
+<p>A single instance of MongoDB can support multiple independent <a href="http://api.mongodb.org/python/current/api/pymongo/mongo_client.html#pymongo.mongo_client.MongoClient">databases</a>. When working with PyMongo you can access databases as below command, the test_database is the database name.</p>
+
+<pre><code>&gt;&gt;&gt; db = client.test_database
+</code></pre>
+</li>
+</ul>
+
+<h3><a name="insert">Insert</a></h3>
+
+<p>In MongoDB, the db.collection.insert() method adds new documents into a collection.</p>
+
+<h4>Insert a Document</h4>
+
+<ul>
+<li>
+<p>Insert a document into a collection</p>
+
+<p>The operation will create the collection inventory if the collection does not currently exist.</p>
+
+<pre><code>db.inventory.insert(
+    {
+        item: "ABC1",
+        details: {
+            model: "14Q3",
+            manufacturer: "XYZ Company"
+        },
+        stock: [{size:"S", qty:25}, {size:"M", qty:50}],
+        category:"clothing"
+    }
+)
+</code></pre>
+
+<p>The operation returns a WriteResult object with the status of the operation. A successful insert of the document returns the following object:</p>
+
+<pre><code>  WriteResult({"nInserted":1})
+</code></pre>
+
+<ul>
+<li>
+<p>Review the inserted document</p>
+
+<p>If the insert operation is successful, verify the insertion by querying the collection.</p>
+
+<pre><code>db.inventory.find()
+</code></pre>
+
+<p>The document you inserted should return:</p>
+
+<pre><code>{ "_id" : ObjectId("53d98f133bb604791249ca99"), "item" : "ABC1", "details" : { "model" : "14Q3", "manufacturer" : "XYZ Company" }, "stock" : [ { "size" : "S", "qty" : 25 }, { "size" : "M", "qty" : 50 } ], "category" : "clothing" }
+</code></pre>
+</li>
+</ul>
+
+<h4>Insert an Array of Documents</h4>
+
+<p>You can pass an array of documents to the db.collection.insert() method to insert multiple documents.</p>
+
+<ul>
+<li>
+<p>Create an array of documents</p>
+
+<p>Define a variable mydocuments that holds an array of documents to insert.</p>
+
+<pre><code>var mydocuments =
+[
+    {
+        item: "ABC2",
+        details:{model:"14Q3", manufacturer: "M1 Corporation"},
+        stock: [{size: "M", qty: 50}],
+        category: "clothing"
+    },
+    {
+        item: "MN02",
+        details:{model:"14Q3", manufacturer: "ABC Company"},
+        stock: [{size: "S", qty: 5}, {size: "M", qty: 5}, {size: "L",qty: 1}],
+        category: "clothing"
+    },
+    {
+        item: "IJK2",
+        details: {model: "14Q2", manufacturer: "M5 Corporation"},
+        stock: [{size: "S", qty: 5}, {size: "L", qty: 1}],
+        category: "houseware"
+    }
+];
+</code></pre>
+</li>
+<li>
+<p>Insert the documents</p>
+
+<p>Pass the mydocuments array to the db.collection.insert() to perform a bulk insert.</p>
+</li>
+</ul>
+
+<p>The method returns a BulkWriteResult object with the status of the operation. A successful insert of the documents returns the following object:</p>
+
+<pre><code>```
+BulkWriteResult({
+    "writeErrors": [ ],
+    "writeConcernErrors": [ ],
+    "nInserted": 3,
+    "nUpserted": 0,
+    "nMatched": 0,
+    "nModified": 0,
+    "nRemoved": 0,
+    "upserted": [ ]
+})
+
+```
+</code></pre>
+</li>
+</ul>
+
+<h4>Insert Multiple Documents with Bulk</h4>
+
+<ul>
+<li>
+<p>Initialize a Bulk Operations Builder</p>
+
+<p>Initialize a Bulk operations builder for the collection inventory.</p>
+
+<pre><code>var bulk = db.inventory.initializeUnorderedBulkOp();
+</code></pre>
+
+<ul>
+<li>Add Insert Operations to the Bulk Object.</li>
+</ul>
+
+<p>Add two insert operations to the bulk object using the Bulk.insert() method.</p>
+
+<pre><code> bulk.insert(
+    {
+        item: "BE10",
+        details: {model:"14Q2", manufacturer: "XYZ Company"},
+        stock: [{size: "L", qty: 5}],
+        category: "clothing"
+    }
+ );
+ bulk.insert(
+    {
+        item: "ZYT1",
+        details: {model:"14Q1", manufacturer: "ABC Company"},
+        stock: [{size: "S", qty: 5}, {size: "M", qty: 5}],
+        category: "houseware"
+    }
+ );
+</code></pre>
+</li>
+</ul>
+
+<ul>
+<li>
+<p>Execute the Bulk Operation</p>
+
+<p>Call the execute() method on the bulk object to execute the operations in its list:</p>
+
+<pre><code>bulk.execute();
+</code></pre>
+
+<p>The method returns a BulkWriteResult object with the status of the operation. A successful insert of the documents returns the following object:</p>
+
+<pre><code>BulkWriteResult({
+    "writeErrors": [ ],
+    "writeConcernErrors": [ ],
+    "nInserted": 2,
+    "nUpserted": 0,
+    "nMatched": 0,
+    "nModified": 0,
+    "nRemoved": 0,
+    "upserted": [ ]
+})
+</code></pre>
+</li>
+</ul>
+
+<h3><a name="query">Query</a></h3>
+
+<p>A query retrieves data stored in the database and may include a projection that specifies the fields from the matching documents to return. The projection limits the amount of data that MongoDB returns to the client over the network.</p>
+
+<ul>
+<li>
+<p>Query Interface</p>
+
+<p>For query operations, MongoDB provides a db.collection.find() method. The method accepts both the query criteria and projections and returns a cursor to the matching documents.</p>
+
+<p>The following diagram highlights the components of a MongoDB query operation: <a href="/awesome5team/General-Resources-Box/blob/master/assets/images/query.png?raw=true" target="_blank"><img src="https://github.com/awesome5team/General-Resources-Box/blob/master/assets/images/query.png?raw=true" alt="query" style="max-width:100%;"></a></p>
+</li>
+</ul>
+
+<p>Name and address are projection which represents filter columns, 1 means exist and need to be listed, 0 means not exist and don't need to be listed. </p>
+
+<p>The next diagram shows the same query in SQL: <a href="/awesome5team/General-Resources-Box/blob/master/assets/images/query-sql.png?raw=true" target="_blank"><img src="https://github.com/awesome5team/General-Resources-Box/blob/master/assets/images/query-sql.png?raw=true" alt="query-sql" style="max-width:100%;"></a></p>
+
+<ul>
+<li>Query Behavior
+MongoDB queries exhibit the following behavior:</li>
+</ul>
+
+<pre><code>- All queries in MongoDB address a single collection
+- You can modify the query to impose limits, skips, and sort orders
+- The order of documents returned by a query is not defined unless specify a sort()
+- Operations that modify existing docuements use the same query syntax as queries to select documents to update.
+- In aggregation pipleline, the $match pipeline stage provides access to MongoDB queries.
+</code></pre>
+
+<p>MongoDB provides a db.collection.findOne() method as a special case of find() that returns a single document.</p>
+
+<ul>
+<li>
+<p>Query Statements</p>
+
+<p>Consider the following diagram of the query process that specifies a query criteria and a sort modifier: <a href="/awesome5team/General-Resources-Box/blob/master/assets/images/query-statements.png?raw=true" target="_blank"><img src="https://github.com/awesome5team/General-Resources-Box/blob/master/assets/images/query-statements.png?raw=true" alt="query-statements" style="max-width:100%;"></a></p>
+
+<p>In the diagram, the query selects documents from the users collection. Using a query selection operator to define the conditions for matching documents, the query selects documents that have age greater than 18. Then the sort() modifier sorts the results by age in ascending order.    </p>
+</li>
+</ul>
+
+<h2><a name="python-code-for-mongodb-operation">Python Code for MongoDB Operation</a></h2>
+
+<p>Using Pymongo to connect MongoDB</p>
+
+<ul>
+<li>
+<p>Install pymongo</p>
+
+<p>install pymongo through pip</p>
+
+<pre><code>  $ sudo pip install pymongo
+</code></pre>
+</li>
+<li>
+<p>Create a json file</p>
+
+<p>Create a json file named data.json to store the data, the following is an example:</p>
+
+<pre><code>{
+    "name": "xiaoming",
+    "age": 20,
+    "birthplace": {
+        "province": "Shanghai",
+        "city": "Shanghai",
+        "area": "Pudong new area"
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>Create database and import the json data into database</p>
+
+<p>Import data into the collection. Go to the folder where the json file has been put, and issue the following command:</p>
+
+<pre><code> $ mongoimport --db connTest --collection person --drop --file data.json
+</code></pre>
+</li>
+<li>
+<p>Connect to mongodb via Python</p>
+
+<p>create a python file named connTest.py to import pymongo as following:</p>
+
+<pre><code>  from pymongo import MongoClient
+
+  client = MongoClient()
+  db = client.connTest
+
+  result = db.person.insert_one({
+          "name": "xiaozhang",
+          "age": 22,
+          "birthplace": {
+          "province": "zhejiang",
+          "city": "Hangzhou",
+          "area": "Xiaoshan area"
+      }
+  })
+
+  persons = db.person.find()
+
+  for person in persons:
+      print("name:", person['name'], 'age:', person['age'])
+
+  client.close()
+
+</code></pre>
+</li>
+<li>
+<p>Test the execute result through command</p>
+
+<p>Run the <code>python connTest.py</code>, if it runs correctly and prints the following information, it says that connect to a MongoDB database via Python successfully.</p>
+
+<pre><code>('name:', u'xiaoming' 'age:', 20)
+('name:', u'xiaozhang' 'age:',22)
+</code></pre>
+</li>
+</ul>
+
+<h2><a name="application-examples">Application Examples</a></h2>
+
+<h3><a name="HD-Wall-Explorer">HD-Wall-Explorer</a></h3>
+
+<p>The example of this project which have used MongoDB as the database,<br>
+path for this code is /HD-Wall-Explorer/app/controllers/apps.py</p>
+
+<pre><code>from app import app
+from pymongo import MongoClient
+from bson import json_util
+from flask.ext.cors import CORS, cross_origin
+from flask import json,request,send_file
+
+client = MongoClient('localhost', 27017)
+db = client.WallExplorer
+
+def getMaxId():
+    existedApps = db.apps.find().sort( [("id", -1)] ).limit(1)
+    return existedApps[0]['id']
+
+    #...
+
+@app.route('/HDWallExplorer/api/v1.0/apps',methods=['POST'])
+def save_app():
+    jsondata = request.data
+    app = json.loads(jsondata)
+    apphash = {}
+
+    if('id' not in app): #Create New Comment: id is NULL
+        if 'description' not in app:
+            app['description']  = ''
+        maxid = getMaxId()
+        apphash = {
+                "id":maxid + 1,
+                "name":app['name'],
+              "path":"http://www.abc.com",
+              "description":app['description'],
+              "thumbnail":app['thumbnail'],
+              "isdeleted": False
+        }
+        db.apps.insert(apphash)
+    elif('isdeleted' in app and app['isdeleted'] == True): #Delete Comment: id is NOT NULL &amp;&amp; isdeleted is TRUE
+        id = app['id']
+        db.apps.update({'id':int(id)},{'$set':{'isdeleted' : True}})
+    else: #Update Comment: id is NOT NULL &amp;&amp; isdeleted is FALSE
+        id = app['id']
+        print 'What the fucking update:  ', jsondata
+        db.apps.update({'id':int(id)},{'$set':{
+                'name':app['name'],
+                'path':app['path'],
+                'description':app['description'],
+                'thumbnail':app['thumbnail']
+                }
+            }
+        )
+    return json_util.dumps(apphash, sort_keys=True, indent=4, separators=(',',':'))
+</code></pre>
+
+<h3><a name="divvy">Divvy</a></h3>
+
+<p>The example of this project which have used MongoDB as the database，path for this code is /divvy/app/controllers/routes.py</p>
+
+<pre><code>from app import app
+from pymongo import MongoClient
+from bson import json_util
+from flask.ext.cors import CORS, cross_origin
+from flask import json,request,send_file
+
+client = MongoClient('localhost', 27017)
+db = client.Divvy
+
+@app.route('/divvy/api/v1.0/routes/start=&lt;start_id&gt;&amp;end=&lt;end_id&gt;',methods=['GET'])
+@cross_origin(origin='*', methods=['GET', 'POST', 'OPTIONS'], headers=['X-Requested-With', 'Content-Type', 'Origin'])
+def get_routes_byid(start_id,end_id):
+    routes = db.routes.find({'id':{'$gte': int(start_id),'$lte': int(end_id)}},{'_id': False})
+    return json_util.dumps(routes, sort_keys=True, indent=4, separators=(',',':'))
+
+# ...
+
+@app.route('/divvy/api/v1.0/routes/Update',methods=['PUT'])
+def update_mass_routes():
+    jsondata = request.form['jsondata']
+    routes = json.loads(jsondata)
+    for route in routes:
+        id = route['id']
+        geo_data = route['geo_data']
+        db.routes.update({'id':int(id)},{'$set':{'geo_data' : geo_data}})
+    return json_util.dumps(routes, sort_keys=True, indent=4, separators=(',',':'))
+
+</code></pre>
+
+<h3><a name="compliance360-API">Compliance360-API</a></h3>
+
+<p>In this project, it has used MongoDB as the database, different from the first two projects, this project has used MongoAlchemy to increase the client model definition. Path for this code is /Compliance360-API/app/models.py:</p>
+
+<pre><code>from mongoalchemy.document import Document
+from mongoalchemy.fields import *
+session = Session(MongoClient('localhost', 27017)).connect('Compliance360')
+
+#...
+
+class KYC(Document):
+    UNIQUE_ID = IntField()
+    CUSTOMER_NAME = StringField()
+    KYC_ACCOUNT_COUNTRY = StringField()
+    KYC_COUNTRY_DOMICILE_INC = StringField()
+    #...
+
+    def __str__(self):
+        return '%s' % (self.UNIQUE_ID)
+
+    def __getitem__(self, key):
+        return self.__getattribute__(key)
+
+    @staticmethod
+    def getStatics():
+        statistics = {'geos': set(), 'categories': set(), 'industries': set()}
+
+        for k in session.query(KYC):
+            statistics['geos'].add(k.KYC_ACCOUNT_COUNTRY)
+            statistics['categories'].add(k.KYC_INDUSTRY_TYPE)
+            statistics['industries'].add(k.CLIENT_CATEGORY)
+        return statistics
+
+    @staticmethod
+    def queryByParams(geographies, industries, categories):
+        kyc_ids, kyc_subset = [], []
+
+        for item in session.query(KYC) \
+                .in_(KYC.KYC_ACCOUNT_COUNTRY, *geographies) \
+                .in_(KYC.KYC_INDUSTRY_TYPE, *industries) \
+                .in_(KYC.CLIENT_CATEGORY, *categories):
+            kyc_subset.append(item)
+            kyc_ids.append(item.UNIQUE_ID)
+
+</code></pre>
+
+<h1><a name="reference">Reference</a></h1>
+
+<ul>
+<li><a href="https://docs.mongodb.org/getting-started/shell/tutorial/install-mongodb-on-os-x/">Install MongoDB on OS X</a></li>
+</ul>
+      </div>
+    </div>
+</body></html>

@@ -1,0 +1,584 @@
+<body style="
+    width: 740px;
+    margin: 0 auto;
+"><div class="comment-body markdown-body markdown-format js-comment-body">
+          <p><a href="https://github.com/awesome5team/assets/blob/master/assets/images/brand-graph.png?raw=true" target="_blank"><img src="https://github.com/awesome5team/assets/blob/master/assets/images/brand-graph.png?raw=true" alt="BrandGraph Screenshot" style="/* max-width:100%; */width: 760px;"></a></p>
+
+<h1>Table of Contents</h1>
+
+<ul>
+<li>
+<a href="#introduction">Introduction</a>
+
+<ul>
+<li><a href="#about">About this Document</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#technologys">Used Technologys</a></li>
+<li><a href="#run">How to Run</a></li>
+</ul>
+</li>
+<li>
+<a href="#core-implementation">Core Implementation</a>
+
+<ul>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#database">Database</a></li>
+<li>
+<a href="#server">Server</a>
+
+<ul>
+<li><a href="#preparation">Preparation</a></li>
+<li><a href="#server-application-structure">Application Structure</a></li>
+<li><a href="#datafeed">Datafeed</a></li>
+<li><a href="#route-definition">Route Definition</a></li>
+<li><a href="#database-query">Database Query</a></li>
+</ul>
+</li>
+<li>
+<a href="#web">Web: AngularJS Front-sideï¼ˆdesktop versionï¼‰</a>
+
+<ul>
+<li><a href="#web-application-structure">Application Structure</a></li>
+<li><a href="#user-cases">User Cases</a></li>
+<li><a href="#how-to-integrate-sigmajs-with-angularjs">How to Integrate sigma.js with Angular.js</a></li>
+<li>
+<a href="#sigmajs-drawing">Sigma.js Drawing</a>
+
+<ul>
+<li><a href="#the-steps-to-draw-graph">The Steps to Draw Graph</a></li>
+<li><a href="#how-to-use-redraw-the-graph">How to Use Redraw the Graph</a></li>
+<li><a href="#how-to-active-nodes">How to Active Nodes(hide and show)</a></li>
+</ul>
+</li>
+<li>
+<a href="#toggle-and-filter">Toggle and Filter</a>
+
+<ul>
+<li><a href="#ion-rangeslider">ion.rangeSlider</a></li>
+<li><a href="#bootstrap-toggle">bootstrap toggle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h1><a name="user-content-introduction">Introduction</a></h1>
+
+<p><a href="https://github.com/Analytics-Innovation-Incubator/brand_graph">BrandGraph</a> is a web application that can be used to display relationships between brands. Analyzing brands data can help user have a intuitive understanding about the brand scale, similarity, business intersection. </p>
+
+<h3><a name="user-content-about">About this Document</a></h3>
+
+<p>We create this document as some kind of conclusion so that we can easily pick it up when we need it in new project. </p>
+
+<h3><a name="user-content-features">Features</a></h3>
+
+<ul>
+<li>Provide both desktop and wall version, user can use it both on browser and a wall device.</li>
+<li>Provide multiple query dimension(include brands, industries or categories) and filters.</li>
+<li>Provide a lot of graph parameters, which means all nodes, edges, text and even animations could be changed dynamically.</li>
+</ul>
+
+<h3><a name="user-content-technologys">Used Technologys</a></h3>
+
+<ul>
+<li>
+<a href="https://www.w3.org/html/">HTML</a>/<a href="https://www.w3.org/Style/CSS/">CSS</a>/<a href="https://www.w3.org/javascript/">JavaScript</a>
+</li>
+<li>
+<a href="http://neo4j.com/">Neo4j</a> the Worldâ€™s Leading Graph Database</li>
+<li>
+<a href="http://flask.pocoo.org/docs/0.10/tutorial/">Flask</a> is a microframework for Python based on Werkzeug, Jinja2 </li>
+<li>
+<a href="https://github.com/angular/angular.js">AngularJS</a> is a popular structural framework for dynamic web apps</li>
+<li>Other Tools
+
+<ul>
+<li>
+<a href="Yeoman">Sigma.js</a> -  JavaScript library dedicated to graph drawing</li>
+<li>
+<a href="http://yeoman.io/">Yeoman</a> - Web application scaffolding tool</li>
+<li>
+<a href="https://git-scm.com/">Git</a> / <a href="https://github.com/">Github</a>- Version control tool and platform</li>
+<li>
+<a href="http://heroku.com/">Heroku</a> - A cloud Platform-as-a-Service supporting several programming languages</li>
+<li>
+<a href="www.graphenedb.com">Graphenedb</a> - Neo4j graph database service</li>
+</ul>
+</li>
+</ul>
+
+<h3><a name="user-content-run">How to Run</a></h3>
+
+<p>BrandGraph's code was hosted on <a href="https://github.com/Analytics-Innovation-Incubator/brand_graph">Github</a>, you can config on your local environment according to the README. Or you can directly visit the deployed version on <a href="https://brandgraph.herokuapp.com/">Heroku</a>.</p>
+
+<h1><a name="user-content-core-implementation">Core Implementation</a></h1>
+
+<h3><a name="user-content-architecture">Architecture</a></h3>
+
+<ul>
+<li>
+<p>Dev Architecture: how does the application run in our local environment</p>
+
+<p><a href="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/local-articheture.png" target="_blank"><img src="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/local-articheture.png" alt="local-articheture.png" style="/* max-width: 20px; *//* width: 20px!important; */width: 520px;"></a></p>
+</li>
+<li>
+<p>Deployed Architecture: the deployed application</p>
+
+<p><a href="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/deployed-articheture.png" target="_blank"><img src="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/deployed-articheture.png" alt="deployed-articheture.png" style="/* max-width:100%; */width: 520px;"></a></p>
+</li>
+</ul>
+
+<h3><a name="user-content-database">Database: Neo4j</a></h3>
+
+<p>We use <a href="http://neo4j.com/">Neo4j</a> as database because it's same-like with our bussiness needs, you can <a href="http://neo4j.com/download/">download it</a> or just refer <a href="https://github.com/Analytics-Innovation-Incubator/brand_graph">Github</a> README's step: <strong>"db environment"</strong> . </p>
+
+<p>*<em>Note: *</em> As the environment was ran locally, we just need to provide a database location then we can connect to it. But it was on a remote server, we may need to add username and password for access.</p>
+
+<h3><a name="user-content-server">Server</a></h3>
+
+<h5><a name="user-content-preparation">Preparation</a></h5>
+
+<p>Make sure you have installed Python and Flask, if not please refer to the <a href="https://github.com/Analytics-Innovation-Incubator/brand_graph">Github</a>  README's "<strong>server environment</strong>" part and make sure your environment right configured. After all that, let's get started to do some source code analysis! </p>
+
+<h5><a name="user-content-server-application-structure">Application Structure</a></h5>
+
+<p><a href="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/brandgraph_application_structure_server.png" target="_blank"><img src="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/brandgraph_application_structure_server.png" alt="brandgraph_application_structure_server.png" style="max-width:100%;"></a></p>
+
+<p>- config.py: common used variables defined</p>
+
+<p>- DataFeed.py: database initialization</p>
+
+<p>- csv: data orignal files location</p>
+
+<p>- app/__init__.py: application entrance, flask instance create here</p>
+
+<p>- app/routes: routes define APIs</p>
+
+<p>- app/models: query database, would been called by routes</p>
+
+<h5><a name="user-content-datafeed">Datafeed</a></h5>
+
+<p>We feed the database with csv files provided by customer via <code>python DataFeed.py</code>. Below would focus on DataFeed.py fragment for understanding. First, import packages would been usedï¼š </p>
+
+<p><em>/brand_graph/server/DataFeed.py</em></p>
+
+<pre><code># ...
+
+'''
+py2neo: a external python package used to integrate with neo4j
+csv and system: python build-in module used for file read).
+'''
+
+from py2neo import neo4j, Graph, Node, Relationship
+import csv
+import sys
+from config import NEO4J_DB_ADDR
+# ...
+</code></pre>
+
+<p>As there are some system environment would be used more than one time, we recommand to write all them in to one file:</p>
+
+<p><em>/brand_graph/server/config</em></p>
+
+<pre><code>#...
+NEO4J_DB_ADDR = "http://localhost:7474/db/data/"
+#...
+</code></pre>
+
+<p>Then we can create the database instance and batch writer, remember to empty the database to prevent data duplicate.</p>
+
+<p><em>/brand_graph/server/DataFeed.py</em></p>
+
+<pre><code>graph = Graph(NEO4J_DB_ADDR)
+graph.delete_all()
+batch = neo4j.WriteBatch(graph)
+</code></pre>
+
+<p>After create connection, we would need to initialize the database structure: </p>
+
+<ol>
+<li>Create nodes: by loop modularity.csv we get attributes and create brand, add it to batch writer then submit the batch into Neo4j. </li>
+<li>Increase features: by loop twitter.csv and get more detailed brand features, query the concerned brand and update it with new features.</li>
+<li>Ceate connections: by loop melt.csv and build the realationship between different brands.</li>
+</ol>
+
+<p><em>/brand_graph/server/DataFeed.py</em></p>
+
+<pre><code>nodes_file = open(pathCSV + 'modularity.csv', "rb")
+
+ # skip the header line because the csv file contains attribute name header
+reader = csv.reader(nodes_file)
+next(reader, None)
+
+for id, name, group, page_rank in reader:
+    index = index + 1
+    brand = batch.create(Node(name= name.strip().lower(), group= group))
+    batch.set_labels(brand, 'Brand')
+    batch.submit()
+</code></pre>
+
+<h5><a name="user-content-route-definition">Route Definition</a></h5>
+
+<p>There are three APIs been used in BrandGraph, they are list below:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th align="center">Method</th>
+<th align="right">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get all brands</td>
+<td align="center">GET</td>
+<td align="right">/brand_graph/api/v1.0/brands</td>
+</tr>
+<tr>
+<td>get the brand with specified name</td>
+<td align="center">GET</td>
+<td align="right">/brand_graph/api/v1.0/brands/string:brandname</td>
+</tr>
+<tr>
+<td>get the category with specified name</td>
+<td align="center">GET</td>
+<td align="right">/brand_graph/api/v1.0/category/string:categoryname</td>
+</tr>
+</tbody>
+</table>
+
+<p>Here is the fragment of API: <strong>get all brands</strong>: </p>
+
+<p><em>/brand_graph/server/app/routes/brands.py</em></p>
+
+<pre><code>import json
+from flask.ext.cors import CORS, cross_origin
+from app.models.model import Brand
+from app import app
+
+brandModel = Brand()
+
+@cross_origin(origin='*', methods=['GET', 'POST', 'OPTIONS'], headers=['X-Requested-With', 'Content-Type', 'Origin'])
+@app.route('/brand_graph/api/v1.0/brands',methods=['GET'])
+def get_brands():
+    brands = brandModel.get_all()
+    return json.dumps(brands)
+#...
+</code></pre>
+
+<p>There are some tips need to be noticed when format an API in Flask:</p>
+
+<ul>
+<li>Flask API is decorated with @app.route. The <code>app</code> is the Flask application instance imported from entrance module <strong><em>brand_graph/server/__init__.py</em></strong>.</li>
+<li>As our web and server are hosted in different container, we must add corss_origin decorator.</li>
+<li>The data access process belong to model, so we abstract all the query process in model Brands.</li>
+</ul>
+
+<h5><a name="user-content-database-query">Database Query</a></h5>
+
+<p>The <em>model.py</em> contains both query methods and data formated methods. Here we just try to explain how does we use py2neo query the database and obtain the data we want.</p>
+
+<p>Of course the first step is new the database instance:</p>
+
+<p><em>/brand_graph/server/app/models/model.py</em></p>
+
+<pre><code>from py2neo import Graph
+from config import NEO4J_DB_ADDR
+
+graph = Graph(NEO4J_DB_ADDR)
+
+#...
+</code></pre>
+
+<p>Then we would define our class Brand and format the get_all methods structure:</p>
+
+<p><em>/brand_graph/server/app/models/model.py</em></p>
+
+<pre><code>
+#...
+
+class Brand(object):
+    def get_all(self):
+        nodes, edges, names, results_nodes = [], [], set(), {}
+        try:
+            # query loic code here
+        except:
+            pass
+        return brands_results
+
+#...
+</code></pre>
+
+<p>The <a href="http://neo4j.com/developer/cypher-query-language/">Neo4j cypher</a> is a querying language which can let us execute the SQL directly, below is the logic how we use <code>graph.cypher</code> to query and format response with customized methods:</p>
+
+<pre><code>#...
+
+class Brand(object):
+    def get_all(self):
+        #...
+
+        query_nodes = "MATCH (n:Brand) WHERE exists(n.company) RETURN n.name, n.group, n.company, n.followers"
+        results_nodes = graph.cypher.execute(query_nodes)
+
+        for rec in results_nodes.records:
+            name, group, company, followers = rec['n.name'], rec['n.group'], rec['n.company'], rec['n.followers']
+            node = self.mapping_node(name, group, company, followers)
+            nodes.append(node)
+
+        # the edges query and format logic here
+
+
+        nodes = sorted(nodes, key=itemgetter("followers"), reverse=True) # nodes sort decending by followers
+
+        #...
+
+        brands_results = {  'nodes': nodes, 'edges': edges, 'industries': self.mapping_industries()}
+
+        #...
+
+</code></pre>
+
+<h3><a name="user-content-web">Web: AngularJS Front-Side</a></h3>
+
+<h5><a name="user-content-web-application-structure">Application Structure</a></h5>
+
+<p><a href="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/brandgraph_application_structure_web.png" target="_blank"><img src="https://raw.githubusercontent.com/awesome5team/General-Resources-Box/master/assets/images/brandgraph_application_structure_web.png" alt="brandgraph_application_structure_web.png" style="max-width:100%;"></a></p>
+
+<p>- web-server.js: used to produce a web container</p>
+
+<p>- requirements.txt: contains packages would been used by grunt tasks</p>
+
+<p>- index.html: home page</p>
+
+<p>- node_modules: packages installed location</p>
+
+<p>- css/js/images/libs/json: as it described</p>
+
+<h5><a name="user-content-user-cases">User Cases</a></h5>
+
+<ul>
+<li>Show Brands
+
+<ul>
+<li>By default we would show all  brands</li>
+<li>We can search by brand name, category name</li>
+<li>We can click on brand and show top 10 concerned brands</li>
+</ul>
+</li>
+<li>Filtess
+
+<ul>
+<li>Can set the tweets followers as filter</li>
+</ul>
+</li>
+<li>Setting
+
+<ul>
+<li>Simple setting: graph edge visible, text visible, animation toggle, etc.</li>
+<li>Advanced setting: more setting about graph</li>
+</ul>
+</li>
+</ul>
+
+<h5><a name="user-content-how-to-integrate-sigmajs-with-angularjs">How to Integrate sigma.js with Angular.js</a></h5>
+
+<p>Sigma.js is a javascript library dedicated to graph drawing, for low coupling and better reusability, we write all graph-drawing code in service.js. You just need to define methods in <em>service.js</em> and expose methods would been used public.</p>
+
+<p><em>/brand_graph/web/js/home/service.js</em></p>
+
+<pre><code>angular.module('brand_graph')
+  .factory('sigma', ['$rootScope', function($rootScope) {
+
+    var sigmaExport = {}, sigmaInstance;
+
+    // ...
+
+    var _draw = function() {
+        // ...
+    }
+
+    var _initInstance = function() {
+        sigmaInstance = // init sigma instane logic
+    }
+
+    _initInstance();
+
+    // ...
+
+    sigmaExport.s = sigmaInstanceï¼›
+    sigmaExport.draw = _draw;ï¼›
+    // ...
+
+    return sigmaExport;
+}]);
+</code></pre>
+
+<p><em>/brand_graph/web/js/home/home-controller.js</em></p>
+
+<pre><code>angular.module('brand_graph')
+  .controller('HomeController', ['$scope', 'sigma', function ($scope, sigma) {
+
+    // ...
+
+    sigma.s.draw(); // use sigma serive exposed function directly
+
+    // ...
+}]);
+
+</code></pre>
+
+<h5><a name="user-content-sigmajs-drawing">Sigma.js Drawing</a></h5>
+
+<h6><a name="user-content-the-steps-to-draw-graph">The Steps to Draw Graph</a></h6>
+
+<ol>
+<li>
+<p>Create sigma instance with a container id and default setting</p>
+
+<pre><code>sigmaInstance = new sigma({
+    container: 'graphContainer',
+        renderer: {
+            container: document.getElementById('graphContainer'),
+            type: 'canvas'
+        },
+    settings: defaults
+});
+</code></pre>
+</li>
+<li>
+<p>Draw Graph with Data</p>
+
+<pre><code>sigmaInstance.graph.read(data);
+sigmaInstance.refresh();
+sigmaInstance.startForceAtlas2(force);
+</code></pre>
+
+<p>There are something need to be noticed:</p>
+
+<ol>
+<li>The data's structure must satisfied some mode so that they could be known.</li>
+<li>After read the data, you can still adjust nodes and edges before final refresh and drawing. Just loop the <code>sigmaInstance.graph.nodes()</code> or <code>sigmaInstance.graph.edges()</code>
+</li>
+<li>The force variable is the paramters would been used for animation, you could refer to the official site for optional paramters.</li>
+</ol>
+</li>
+</ol>
+
+<h6><a name="user-content-how-to-use-redraw-the-graph">How to use redraw the graph</a></h6>
+
+<p>If you need to redraw the graph with data, you can just do it like drawing, but remember to excute the kill and clear:</p>
+
+<pre><code>    sigmaInstance.killForceAtlas2();
+    sigmaInstance.graph.clear();
+    // draw steps in previous part
+</code></pre>
+
+<h6><a name="user-content-how-to-active-nodes">How to Active Nodes(hide and show)</a></h6>
+
+<p>This could be really easy to do, just loop the nodes and edges, determine it's visibility with yourself's logic.</p>
+
+<pre><code>sigmaInstance.graph.nodes().forEach(function(n) {
+    // the showhide judge logic can be defined different
+    var flag = nodeShowOrHideLogic(n);
+
+    // we have saved the original color, label, size for reuse
+    // the color could be set as transparent for hide
+    n.color = flag ? n.originalColor : inactiveColor;
+    n.size = flag ? n.originalSize * 2 : n.originalSize;
+    n.label = flag ? n.originalLabel : '';
+});
+sigmaInstance.graph.edges().forEach(function(e) {
+    var flag = edgeShowOrHideLogic(e);
+    e.color = flag ? e.originalColor : inactiveColor;
+    e.size = flag ? e.originalSize * 2 : e.originalSize;
+});
+
+sigmaInstance.refresh();
+
+</code></pre>
+
+<h6><a name="user-content-how-to-place-nodes-around-and-recover">How to Place Nodes Around and Recover</a></h6>
+
+<p>There is a requirement in our project: Once you click a brand, place all concerned top 10 brands around it and hide the rest. What we gonna todo is change all nodes' visbible and coordinates attributes, below is the code fragment:</p>
+
+<p><em>web/js/home/service.js</em></p>
+
+<pre><code>var placeAround = function(nodeId) {
+
+    sigmaInstance.stopForceAtlas2();
+
+    // connects is a tool methods define to get all connected nodes
+    var activeHash = sigmaInstance.graph.connects(nodeId);
+
+    // make it not empty for case judgement after
+    activeHash[nodeId] = {};
+
+    var activeNum = _.keys(activeHash).length;
+    var radius = 1, i = 0;
+
+    // calcuate the max x to determine the round circle
+    sigmaInstance.graph.nodes().forEach(function(n) {
+        if (radius &lt; n.x) radius = n.x;
+    });
+
+    sigmaInstance.graph.nodes().forEach(function(n) {
+        n.originalX = n.x;
+        n.originalY = n.y;
+        if (n.id === nodeId) {
+            n.x = 0;
+            n.y = 0;
+        } else if (activeHash[n.id]) {
+            n.x = Math.cos(Math.PI * 2 * i / (activeNum - 1)) * radius * 0.7;
+            n.y = Math.sin(Math.PI * 2 * i / (activeNum - 1)) * radius * 0.7;
+            i ++;
+        }
+    });
+
+    sigmaInstance.refresh();
+}
+</code></pre>
+
+<h5><a name="user-content-toggle-and-filter">Toggle and Filter</a></h5>
+
+<p>To provide the user with toggle and filter function, we use different tools, here we would make brief introduction.</p>
+
+<h6><a name="user-content-ion-rangeslider">ion.rangeSlider</a></h6>
+
+<p>Sigma.js provide a lot of parameters for size, colors and animation. By use ion.rangeSlider we can detect the paramteter value change and trigger sigma redraw. Here is one slider example: </p>
+
+<pre><code>// define the element in page before instance slider
+$("#slider-gravity").ionRangeSlider({
+    min: 0,
+    max: 10,
+    from: scope.getSigmaForce('gravity'), // all value could be a calculated result
+    type: 'single',
+    step: 0.1,
+    onFinish: function(obj) {
+        // execute the simag redraw function
+    }
+});
+</code></pre>
+
+<h6><a name="user-content-bootstrap-toggle">bootstrap toggle</a></h6>
+
+<p>It's not include in bootstrap or bootstrap-tpls, so you have to download and import the bootstrap-toggle before use. After than you can delcare the input element as text input and bind on/off events on it.</p>
+
+<p><em>/brand_graphp/web/views/components/forceComponent.html</em></p>
+
+<pre><code>&lt;input id="linLogMode-button" type="checkbox" data-toggle="toggle"&gt;
+</code></pre>
+
+<p><em>/brand_graphp/web/js/home/directives.js</em></p>
+
+<pre><code>$('#linLogMode-button').bootstrapToggle('on').change(function() {
+    // trigger the sigma.js drawing function
+});
+</code></pre>
+
+<hr>
+
+<p>End</p>
+      </div></body>
