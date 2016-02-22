@@ -18,22 +18,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-- Introduction
-- Basics
-  - Create project
-  - Branch operations
-  - Configure Host
-  - Commit Process
-  - Revoke change
-  - Compare changes
-  - Development process for features/bugs
-    - Step1: development 
-    - Step2: send pull request to project owner/leader/manager
-    - Step3: owner/leader/manager merge to master and delete the created branch
-  - How to commit code when cooperate with others
-- Issues & Solutions
-- References
-
 ## Introduction
 
 This document introduces the usage of git.
