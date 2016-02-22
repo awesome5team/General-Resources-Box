@@ -1,135 +1,256 @@
-# DocToc [![build status](https://secure.travis-ci.org/thlorenz/doctoc.png)](http://travis-ci.org/thlorenz/doctoc)
-
-[![NPM](https://nodei.co/npm/doctoc.png?downloads=true&stars=true)](https://nodei.co/npm/doctoc/)
-
-Generates table of contents for markdown files inside local git repository. Links are compatible with anchors generated
-by github or other sites via a command line flag.
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Adding toc to all files in a directory and sub directories](#adding-toc-to-all-files-in-a-directory-and-sub-directories)
-  - [Update existing doctoc TOCs effortlessly](#update-existing-doctoc-tocs-effortlessly)
-  - [Adding toc to individual files](#adding-toc-to-individual-files)
-    - [Examples](#examples)
-  - [Using doctoc to generate links compatible with other sites](#using-doctoc-to-generate-links-compatible-with-other-sites)
-    - [Example](#example)
-  - [Specifying location of toc](#specifying-location-of-toc)
-  - [Specifying a custom TOC title](#specifying-a-custom-toc-title)
-  - [Specifying a maximum heading level for TOC entries](#specifying-a-maximum-heading-level-for-toc-entries)
+- [Introduction](#introduction)
+- [Basics](#basics)
+  - [Create project](#create-project)
+  - [Branch operations](#branch-operations)
+  - [Commit Process](#commit-process)
+  - [Revoke change](#revoke-change)
+- [Development process for features/bugs](#development-process-for-featuresbugs)
+  - [Step1: development](#step1-development)
+  - [Step2: send pull request to project owner/leader/manager](#step2-send-pull-request-to-project-ownerleadermanager)
+  - [Step3: owner/leader/manager merge to master and delete the created branch](#step3-ownerleadermanager-merge-to-master-and-delete-the-created-branch)
+- [How to commit code when cooperate with others](#how-to-commit-code-when-cooperate-with-others)
+- [Issues & Solutions](#issues-&-solutions)
+- [References:](#references)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+- Introduction
+- Basics
+  - Create project
+  - Branch operations
+  - Configure Host
+  - Commit Process
+  - Revoke change
+  - Compare changes
+  - Development process for features/bugs
+    - Step1: development 
+    - Step2: send pull request to project owner/leader/manager
+    - Step3: owner/leader/manager merge to master and delete the created branch
+  - How to commit code when cooperate with others
+- Issues & Solutions
+- References
 
-## Installation
+## Introduction
 
-    npm install -g doctoc
+This document introduces the usage of git.
 
-## Usage
+Our team use Git for collaborative development. Git offers GUI tool and command line. In the develop process, we can also use tools like DiffMerge to compare codes before pushing codes to remote repository, this can help prevent wrong commit not wanted.
 
-In its simplest usage, you can pass one or more files or folders to the
-`doctoc` command. This will update the TOCs of each file specified as well as of
-each markdown file found by recursively searching each folder. Below are some
-examples.
+## Basics
+### Create project
 
-### Adding toc to all files in a directory and sub directories
+- Clone remote project
 
-Go into the directory that contains you local git project and type:
+    ```
+    git clone <path_to_repository>
+    ```
+- Create local project
+	
+    ```
+    cd <path_to_local_root_directory>
+    ```
+	
+    ```
+    git init
+    ```
+
+### Branch operations
+
+- Fetch all latest branches
+
+    ```
+    git fetch
+    ```
+
+- List branches
+
+    ```
+    git branch
+    ```
+- Switch branch
+
+    ```
+    git checkout <branch_name>
+    ```
+- Create new branch
+
+    ```
+    git checkout -b <branch_name>
+    ```
+- Delete branch(local/remote)
+
+    ```
+    git branch -D <branchName> #Delete local branch
+    ```
+		
+    ```
+    git push origin --delete <branchName> #Delete remote branch
+    ```
+	    
+### Configure Host
+
+- TODO
+
+### Commit Process
+
+- Add the files need to be committed
+
+    ```
+    git add -A
+    ```
+- Commit changes
+
+    ```
+    git commit -m "#<task_number> - Commit message"
+    ```
     
-    doctoc .
-
-This will update all markdown files in the current directory and all its
-subdirectories with a table of content that will point at the anchors generated
-by the markdown parser. Doctoc defaults to using the GitHub parser, but other
-[modes can be
-specified](#using-doctoc-to-generate-links-compatible-with-other-sites).
+- Push to the remote repository
 
 
-### Update existing doctoc TOCs effortlessly
+    ```
+    git push origin <branch_name> #	Push commited changes to the new branch of your remote repository.
+    ```
 
-If you already have a TOC inserted by doctoc, it will automatically be updated by running the command (rather than inserting a duplicate toc). Doctoc locates the TOC by the `<!-- START doctoc -->` and `<!-- END doctoc -->` comments, so you can also move a generated TOC to any other portion of your document and it will be updated there.
+### Revoke change
 
-### Adding toc to individual files
+- To restore to the latest submission record：
 
-If you want to convert only specific files, do:
+		git checkout 
+		git reset —hard origin/master
+    
+### Compare changes
 
-    doctoc /path/to/file [...]
+- Command line
 
-#### Examples
+    ```
+    git diff
+    ```
+- The Third-party tool(GUI): DiffMerge
 
-    doctoc README.md
+## Development process for features/bugs
 
-    doctoc CONTRIBUTING.md LICENSE.md
+### Step1: development 
 
-You can use this feature to do more sophisticated things. For example, if you
-have [ack][ack] installed, you could add `<!-- DOCTOC SKIP -->` to specific
-files and then use
+1. Create a new branch and switch to it for a concrete task
+    
+    ```
+    git checkout -b <branch_name>
+    ```
+2. Make changes for your task
 
-    ack -L 'DOCTOC SKIP' | xargs doctoc
+3. List the files you've changed and those you still need to add or commit
+    
+    ```
+    git status
+    ```
+4. Add the files changed(**this command would add all files new or changed, please make sure all that is what you want commit**)
+    
+    ```
+    git add -A
+    ```
+5. Commit changes to head
+    
+    ```
+    git commit -m "#<task_number> - Commit message"
+    ```
+6. Push commited changes to the remote repository
+    
+    ```
+    git push origin <branch_name>
+    ```
 
-to recompile only those files which don't have the DOCTOC SKIP comment.
+### Step2: send pull request to project owner/leader/manager
 
-### Using doctoc to generate links compatible with other sites
 
-In order to add a table of contents whose links are compatible other sites add the appropriate mode flag:
+Reference link: [Creating a pull request](https://help.github.com/articles/creating-a-pull-request/)
 
-Available modes are:
+Choose the branch that contains your commits.To the left of the "Branch" menu, click the green Compare and Review button.
+![Compare and Review button](https://help.github.com/assets/images/help/pull_requests/pull-request-start-review-button.png)
 
-```
---bitbucket bitbucket.org
---nodejs    nodejs.org
---github    github.com
---gitlab    gitlab.com
---ghost     ghost.org
-```
+The Compare page will automatically select the base and compare branches; to change these, click Edit.
 
-#### Example
+Reference link: [Comparing commits across time](https://help.github.com/articles/comparing-commits-across-time/#comparing-branches)
 
-    doctoc README.md --bitbucket
+![the base and compare branches](https://help.github.com/assets/images/help/branch/comparing_branches.png)
 
-### Specifying location of toc
+On the Compare page, click Create pull request. Type a title and description for your pull request. Click Create pull request.
+![pull request](https://help.github.com/assets/images/help/pull_requests/pullrequest-send.png)
 
-By default, doctoc places the toc at the top of the file. You can indicate to have it placed elsewhere with the following format:
+### Step3: owner/leader/manager merge to master and delete the created branch
 
-```
-<!-- START doctoc -->
-<!-- END doctoc -->
-```
+Reference link: [Merging a pull request](https://help.github.com/articles/merging-a-pull-request/)
 
-You place this code directly in your .md file. For example:
+1. Under your repository name, click  Pull requests.
+![pull request place](https://help.github.com/assets/images/help/repository/repo-tabs-pull-requests.png)
 
-```
-// my_new_post.md
-Here we are, introducing the post. It's going to be great!
-But first: a TOC for easy reference.
+2. In the "Pull Requests" list, click the pull request you'd like to merge. Click Merge pull request.
+![merge pull request](https://help.github.com/assets/images/help/pull_requests/merge_box/pullrequest-mergebutton.png)
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+3. Type a commit message, or accept the default message. Under the commit message box, click Confirm merge.
+![confirm merge](https://help.github.com/assets/images/help/pull_requests/merge_box/pullrequest-confirmmerge.png)
 
-# Section One
+4. [Delete branch](https://help.github.com/articles/deleting-unused-branches/)
 
-Here we'll discuss...
+	At the bottom of a merged or closed pull request, you’ll see a button to delete the lingering branch:
+![delete branch](https://help.github.com/assets/images/help/pull_requests/delete_branch_button.png)
 
-```
 
-Running doctoc will insert the toc at that location.
+## How to commit code when cooperate with others
 
-###
+1. Pull the latest changes from remote server for this branch before making some changes for your task
+ 
+    ```
+    git pull origin <branch_name>
+    ```
+2. List the files you've changed and those you still need to add or commit after making some changes for your task
+    
+    ```
+    git status
+    ```
+3. Temporarily save the changes not committed on a stack
+    
+    ```
+    git stash
+    ```
+4. Pull the latest changes from remote server for this branch
+    
+    ```
+    git pull origin <branch_name>
+    ```
+5. Bring back the saved changes onto the working directory, and remove them from the stack at the same time
+    
+    ```
+    git stash pop
+    ```
+6. List the files you've changed and those you still need to add or commit, if conflict try to solve it before add/commit
+    
+    ```
+    git status
+    ```
+7. Add the files changed
+    
+    ```
+    git add -A
+    ```
+8. Commit changes to head
+    
+    ```
+    git commit -m "#<task_number> - Commit message"
+    ```
+9. Push commited changes to the new branch of your remote repository
+    
+    ```
+    git push origin <branch_name>
+    ```
 
-Use the `--title` option to specify a (Markdown-formatted) custom TOC title; e.g., `doctoc --title '**Contents**' .` From then on, you can simply run `doctoc <file>` and doctoc will will keep the title you specified.
+## Issues & Solutions
+- N/A
 
-Alternatively, to blank out the title with a newline, use the `--notitle` option. This will simply remove the title from the TOC.
-
-### Specifying a maximum heading level for TOC entries
-
-Use the `--maxlevel` option to limit TOC entries to headings only up to the specified level; e.g., `doctoc --maxlevel 3 .`
-
-By default,
-
-- no limit is placed on Markdown-formatted headings,
-- whereas headings from embedded HTML are limited to 4 levels.
-
-[ack]: http://beyondgrep.com/
+## References: 
+- [Git Reference](http://gitref.org) - Git
+- [Basic Git commands](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html) - by Atlassian Stash
+- [How To Use Git Effectively](https://www.digitalocean.com/community/tutorials/how-to-use-git-effectively) - by Jason Kurtz

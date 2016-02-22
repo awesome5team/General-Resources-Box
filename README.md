@@ -6,7 +6,7 @@
     - [Brand Graph](https://github.com/awesome5team/General-Resources-Box/issues/2)
     - [Doc Graph](https://github.com/awesome5team/General-Resources-Box/issues/3)
 - Development
-    - [Git: How Git Been Ued in Projects](https://github.com/awesome5team/General-Resources-Box/issues/1)
+    - [Git: How Git Been Ued in Projects](https://github.com/awesome5team/General-Resources-Box/blob/master/md/guidance_how_git_been_used_in_projects.md)
     - [Yeoman: How to Quickly Scaffold Application Structure](https://github.com/awesome5team/General-Resources-Box/issues/11)
     - [Application Deploy Guidance](https://github.com/awesome5team/General-Resources-Box/issues/17)
 - Database
