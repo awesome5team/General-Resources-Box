@@ -121,10 +121,6 @@
     - [修改邮箱](#%E4%BF%AE%E6%94%B9%E9%82%AE%E7%AE%B1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-
-注：简书并不提供生成目录的功能，笔记多了很不好翻阅，于是代码手动生成了一个简陋的目录。正在考虑自己搭建一个博客，争取在一周内把笔记都迁移到博客上去。 - 2015/07/08
-
 # 前言
 
 ## Flask框架的特点
