@@ -28,7 +28,8 @@
     - [How to Convert Issue HTML to PDF](https://github.com/awesome5team/General-Resources-Box/issues/18)
     - [How to Generate Table of Content for Markdown Article](https://github.com/awesome5team/General-Resources-Box/blob/master/sources/table-of-content-producer.py)
 - Articles 
-  - [Notes of《Flask Web Development》- updated to chapter 8](Neo4j: Using Neo4j from Python](https://github.com/awesome5team/General-Resources-Box/blob/master/md/notes/《Flask Web Development》- updated to chapter 8.md)
+  - [Notes of《Flask Web Development》- updated to chapter 8](https://github.com/awesome5team/General-Resources-Box/blob/master/md/notes/《Flask Web Development》- updated to chapter 8.md)
+  
 -----
 ### Doing
 
