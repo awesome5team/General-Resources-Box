@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [General-Resources-Box](#general-resources-box)
+    - [Completed](#completed)
+    - [Doing](#doing)
+    - [Todo](#todo)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # General-Resources-Box
 
 ### Completed
@@ -16,7 +27,8 @@
 - Tools
     - [How to Convert Issue HTML to PDF](https://github.com/awesome5team/General-Resources-Box/issues/18)
     - [How to Generate Table of Content for Markdown Article](https://github.com/awesome5team/General-Resources-Box/blob/master/sources/table-of-content-producer.py)
-
+- Articles 
+  - [Notes of《Flask Web Development》- updated to chapter 8](Neo4j: Using Neo4j from Python](https://github.com/awesome5team/General-Resources-Box/blob/master/md/notes/《Flask Web Development》- updated to chapter 8.md)
 -----
 ### Doing
 
