@@ -115,9 +115,9 @@ Could not find rake-10.1.0 in any of the sources
 Run `bundle install` to install missing gems.
 ```
 
-答：以个人为例，之前所有的包都是通过bundle install来（1）安装gem在项目根目录下的vendor中的 （2）通过新增`.bundle/config`来增加默认的bundle exec的寻址配置（过编辑`.gitignore`让 `vendor/` 和 `.bundle/` 显示出来可以判定这一点）。
+答：以个人为例，之前所有的包都是通过bundle install来（1）安装gem在项目根目录下的vendor中的 （2）通过新增`.bundle/config`来增加默认的bundle exec的寻址配置（通过编辑`.gitignore`让 `vendor/` 和 `.bundle/` 显示出来可以判定这一点）。
 
-在克隆代码后，直接执行`bundle exec rails s`首先会默认从当前目录去找`.bundle/config`, 没找到以后回去系统中安装的目录下找对应的gem，没找到以后会报错。所以解决办法有两个，一是按照要求在进行 `bundle install --path vendor` 命令，再次将包安装在 vendor中。而是通过rvm进行项目gemset的环境和切换，然后在通过bundle install来安装对应的gem到项目空间中。
+在克隆代码后，直接执行`bundle exec rails s`首先会默认从当前目录去找`.bundle/config`, 没找到以后回去系统中安装的目录下找对应的gem，没找到以后会报错。所以解决办法有两个，一是按照要求在进行 `bundle install --path vendor` 命令，再次将包安装在 vendor中。二是通过rvm进行项目gemset的环境和切换，然后在通过bundle install来安装对应的gem到项目空间中。
 
 两种做法孰优孰劣，个人权衡。
 
