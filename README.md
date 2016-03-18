@@ -15,6 +15,8 @@ ox/issues/4)
     - [Git: How Git Been Ued in Projects](https://github.com/awesome5team/General-Resources-Box/blob/master/md/development/guidance_how_git_been_used_in_projects.md)
     - [Yeoman: How to Quickly Scaffold Application Structure](https://github.com/awesome5team/General-Resources-Box/blob/master/md/development/yeoman_how_to_quickly_scaffold_application_structure.md)
     - [Application Deploy Guidance](https://github.com/awesome5team/General-Resources-Box/issues/17)
+	- [iVantage: How Gem RVM Bundle Work Together](https://github.com/awesome5team/General-Resources-Box/blob/master/md/development/how-gem-rvm-bundle-work-together.md)
+
 - Database
     - [Guidance for MongoDB (Install, Connect, Insert, Query, Example)](https://github.com/awesome5team/General-Resources-Box/issues/8)
     - [MySQL:  How to Execute a SQL File via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
