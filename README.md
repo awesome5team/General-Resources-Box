@@ -22,6 +22,7 @@
     - [Guidance for MongoDB (Install, Connect, Insert, Query, Example)](https://github.com/awesome5team/General-Resources-Box/issues/8)
     - [MySQL:  How to Execute a SQL File via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
     - [Neo4j: Using Neo4j from Python](https://github.com/awesome5team/General-Resources-Box/blob/master/md/database/Neo4j- Using Neo4j from Python.md)
+    - [psql:  How to Export Databases](https://github.com/awesome5team/General-Resources-Box/issues/23)
 - Tools & Web Components
     - [Cool navigation whell based on d3.js](https://github.com/awesome5team/General-Resources-Box/issues/14)
     - [How to Convert Issue HTML to PDF](https://github.com/awesome5team/General-Resources-Box/issues/18)
