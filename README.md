@@ -26,5 +26,6 @@
     - [Cool navigation whell based on d3.js](https://github.com/awesome5team/General-Resources-Box/issues/14)
     - [How to Convert Issue HTML to PDF](https://github.com/awesome5team/General-Resources-Box/issues/18)
     - [How to Generate Table of Content for Markdown Article](https://github.com/awesome5team/General-Resources-Box/blob/master/sources/table-of-content-producer.py)
+    - [How to connect Github and Asana](https://github.com/awesome5team/General-Resources-Box/issues/24)
 - Articles
   - [《Flask Web Development》- Updated to Chapter 8](https://github.com/awesome5team/General-Resources-Box/blob/master/md/notes/《Flask Web Development》- updated to chapter 8.md)
