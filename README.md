@@ -22,9 +22,11 @@
     - [Guidance for MongoDB (Install, Connect, Insert, Query, Example)](https://github.com/awesome5team/General-Resources-Box/issues/8)
     - [MySQL:  How to Execute a SQL File via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
     - [Neo4j: Using Neo4j from Python](https://github.com/awesome5team/General-Resources-Box/blob/master/md/database/Neo4j- Using Neo4j from Python.md)
+    - [How to export and import database using psql](https://github.com/awesome5team/General-Resources-Box/issues/23)
 - Tools & Web Components
     - [Cool navigation based on d3.js](https://github.com/tangyefei/d3-navigation)
     - [How to Convert Issue HTML to PDF](https://github.com/awesome5team/General-Resources-Box/issues/18)
     - [How to Generate Table of Content for Markdown Article](https://github.com/awesome5team/General-Resources-Box/blob/master/sources/table-of-content-producer.py)
+    - [How to connect Github and Asana](https://github.com/awesome5team/General-Resources-Box/issues/24)
 - Articles
   - [《Flask Web Development》- Updated to Chapter 8](https://github.com/awesome5team/General-Resources-Box/blob/master/md/notes/《Flask Web Development》- updated to chapter 8.md)
