@@ -23,7 +23,7 @@
     - [MySQL:  How to Execute a SQL File via Python](https://github.com/awesome5team/General-Resources-Box/issues/7)
     - [Neo4j: Using Neo4j from Python](https://github.com/awesome5team/General-Resources-Box/blob/master/md/database/Neo4j- Using Neo4j from Python.md)
 - Tools & Web Components
-    - [Cool navigation whell based on d3.js](https://github.com/awesome5team/General-Resources-Box/issues/14)
+    - [Cool navigation based on d3.js](https://github.com/tangyefei/d3-navigation)
     - [How to Convert Issue HTML to PDF](https://github.com/awesome5team/General-Resources-Box/issues/18)
     - [How to Generate Table of Content for Markdown Article](https://github.com/awesome5team/General-Resources-Box/blob/master/sources/table-of-content-producer.py)
 - Articles
