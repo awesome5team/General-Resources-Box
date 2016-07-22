@@ -11,6 +11,7 @@
     - [HD Wall Explorer](https://github.com/awesome5team/General-Resources-Box/issues/4)
     - [Compliance360](https://github.com/awesome5team/General-Resources-Box/issues/6)
 - Development
+    - [Rails: How to initialize a rails project](https://github.com/awesome5team/General-Resources-Box/issues/25)
     - [Git: How Git Been Ued in Projects](https://github.com/awesome5team/General-Resources-Box/blob/master/md/development/guidance_how_git_been_used_in_projects.md)
     - [Yeoman: How to Quickly Scaffold Application Structure](https://github.com/awesome5team/General-Resources-Box/blob/master/md/development/yeoman_how_to_quickly_scaffold_application_structure.md)
     - [Application Deploy Guidance](https://github.com/awesome5team/General-Resources-Box/issues/17)
